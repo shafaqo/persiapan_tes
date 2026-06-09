@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sistem CAT - Shafaqo</title>
+    <style>
+        /* === DESAIN ESTETIK MODERN SHAFAQO (MONOKROM) === */
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #000000; 
+            --primary-hover: #222222;
+            --accent: #000000; 
+            --white: #ffffff;
+            --bg-body: #f5f5f5;
+            --bg-card: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #666666;
+            --border-color: #e5e5e5;
+            --success: #000000; /* Dibuat netral sesuai tema logo */
+            --danger: #444444;
+            --warning: #888888;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+            --shadow-lg: 0 24px 48px rgba(0,0,0,0.08);
+            --radius-lg: 20px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+        body { font-family: 'Outfit', sans-serif; background-color: var(--bg-body); color: var(--text-main); display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; line-height: 1.6; }
+
+        .container { width: 100%; max-width: 768px; background: var(--bg-card); min-height: 100vh; position: relative; display: flex; flex-direction: column; }
+
+        @media (min-width: 768px) {
+            body { align-items: center; padding: 40px 20px; }
+            .container { min-height: 90vh; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); overflow: hidden; border: 1px solid var(--border-color); }
+        }
+
+        /* === LOGO HEADER === */
+        .brand-header { text-align: center; margin-bottom: 24px; }
+        .brand-logo-img { height: 60px; margin-bottom: 10px; }
+        .brand-title { font-size: 1.8rem; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; line-height: 1.1; }
+
+        /* === ANIMASI === */
+        .fade-in { animation: fadeIn 0.5s ease forwards; }
+        .slide-up { animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* === SCREEN STATES === */
+        .screen { display: none; padding: 30px 24px; flex-direction: column; flex-grow: 1; }
+        .screen.active { display: flex; }
+        @media (min-width: 640px) { .screen { padding: 40px; } }
+
+        /* === UTILITY === */
+        .text-center { text-align: center; }
+        .mb-2 { margin-bottom: 8px; } .mb-4 { margin-bottom: 16px; } .mb-6 { margin-bottom: 24px; }
+        
+        h1.title { font-size: 2rem; color: var(--primary); margin-bottom: 10px; line-height: 1.2; font-weight: 700; letter-spacing: -0.5px;}
+        p.subtitle { color: var(--text-muted); font-size: 1rem; margin-bottom: 24px; font-weight: 300;}
+
+        /* === DASHBOARD MINI === */
+        .dash-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 30px; }
+        .dash-card { background: var(--white); padding: 16px 10px; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); }
+        .dash-val { font-size: 1.5rem; font-weight: 700; color: var(--primary); line-height: 1; margin-bottom: 4px; }
+        .dash-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
+        
+        /* === LEADERBOARD (TOP 9 & SEARCH) === */
+        .leaderboard-section { border-top: 1px solid var(--border-color); padding-top: 30px; margin-top: 20px;}
+        .lb-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;}
+        .lb-title { font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; gap: 8px;}
+        
+        .search-box { position: relative; margin-bottom: 20px; }
+        .search-input { width: 100%; padding: 12px 16px 12px 40px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); font-family: inherit; font-size: 0.95rem; background: var(--bg-body); transition: var(--transition);}
+        .search-input:focus { outline: none; border-color: var(--primary); background: var(--white); }
+        .search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); opacity: 0.5; }
+
+        .lb-list { display: flex; flex-direction: column; gap: 10px; }
+        .lb-card { background: var(--white); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 16px; transition: var(--transition); }
+        .lb-card:hover { border-color: var(--primary); box-shadow: var(--shadow-md); }
+        .lb-top-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .lb-rank { font-weight: 800; font-size: 1.1rem; width: 30px; color: var(--text-muted);}
+        .lb-name { font-weight: 600; font-size: 1.05rem; flex-grow: 1; color: var(--primary);}
+        .lb-score { font-weight: 800; font-size: 1.2rem; color: var(--primary); background: var(--bg-body); padding: 4px 10px; border-radius: 6px;}
+        .lb-detail-row { font-size: 0.8rem; color: var(--text-muted); display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 8px; border-bottom: 1px dashed var(--border-color); padding-bottom: 8px;}
+        .lb-kat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 8px; font-size: 0.8rem; }
+        .lb-kat-item { background: var(--bg-body); padding: 6px 8px; border-radius: 4px; border: 1px solid var(--border-color); }
+        
+        /* Rank Colors */
+        .rank-1 .lb-rank { color: #000; }
+        .rank-2 .lb-rank { color: #333; }
+        .rank-3 .lb-rank { color: #666; }
+
+        /* === PREMIUM INFO BOX === */
+        .premium-box { background: var(--white); border: 1px solid var(--primary); border-radius: var(--radius-lg); padding: 32px 24px; margin-top: 40px; text-align: left; box-shadow: 8px 8px 0px rgba(0,0,0,0.05); }
+        .premium-box h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; font-weight: 700;}
+        .premium-box p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 24px; line-height: 1.6; }
+        
+        .step-flow { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; padding: 16px; background: var(--bg-body); border-radius: var(--radius-sm); border: 1px solid var(--border-color); }
+        .step-item { display: flex; align-items: center; gap: 12px; }
+        .step-num { width: 24px; height: 24px; background: var(--primary); color: var(--white); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; }
+        .step-text { font-size: 0.9rem; color: var(--text-main); line-height: 1.4; }
+        .step-text strong { color: var(--primary); font-weight: 700; }
+
+        .pay-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 24px; }
+        .pay-item { background: var(--white); border: 1px solid var(--border-color); padding: 16px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: var(--transition); }
+        .pay-item:hover { border-color: var(--primary); box-shadow: var(--shadow-sm); }
+        .pay-item-left { display: flex; align-items: center; gap: 16px; }
+        .pay-icon { width: 36px; height: auto; max-height: 24px; object-fit: contain; filter: grayscale(100%); opacity: 0.8;}
+        .pay-item:hover .pay-icon { filter: grayscale(0%); opacity: 1; }
+        .pay-text { font-weight: 600; font-size: 1rem; color: var(--primary); }
+        .pay-sub { font-size: 0.8rem; color: var(--text-muted); display: block; margin-top: 2px;}
+        .copy-badge { font-size: 0.75rem; background: var(--bg-body); border: 1px solid var(--border-color); color: var(--primary); padding: 6px 12px; border-radius: 20px; font-weight: 600; display: flex; align-items: center; gap: 4px;}
+
+        /* === TOAST NOTIFICATION === */
+        #toast { visibility: hidden; min-width: 250px; background-color: var(--primary); color: #fff; text-align: center; border-radius: 8px; padding: 14px 24px; position: fixed; z-index: 1000; left: 50%; bottom: 30px; font-size: 0.95rem; font-weight: 500; transform: translateX(-50%) translateY(20px); opacity: 0; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: var(--shadow-lg); }
+        #toast.show { visibility: visible; opacity: 1; transform: translateX(-50%) translateY(0); }
+
+        /* === INPUTS & BUTTONS === */
+        .input-group { margin-bottom: 20px; width: 100%; }
+        .input-label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; color: var(--text-main); }
+        .input-field { width: 100%; padding: 16px 20px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); font-size: 1rem; font-family: inherit; transition: var(--transition); background: var(--white); }
+        .input-field:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05); }
+        
+        .btn { width: 100%; padding: 16px 24px; border-radius: var(--radius-sm); font-size: 1.05rem; font-weight: 600; cursor: pointer; transition: var(--transition); border: none; display: flex; justify-content: center; align-items: center; gap: 10px; font-family: inherit; }
+        .btn-primary { background: var(--primary); color: white; border: 1px solid var(--primary); }
+        .btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .btn-outline { background: var(--white); color: var(--primary); border: 1px solid var(--border-color); }
+        .btn-outline:hover { border-color: var(--primary); background: var(--bg-body); }
+        .btn-wa { background: #25D366; color: white; text-decoration: none; border-radius: var(--radius-sm); font-weight: 600; }
+        
+        /* === SETUP MIX KATEGORI UI === */
+        .setup-mix-container { background: var(--white); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 16px; margin-bottom: 20px; }
+        .mix-item { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border-color); }
+        .mix-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .mix-checkbox-label { display: flex; align-items: center; gap: 10px; font-weight: 600; cursor: pointer; }
+        .mix-checkbox { width: 18px; height: 18px; accent-color: var(--primary); cursor: pointer; }
+        .mix-input-group { display: flex; align-items: center; gap: 10px; }
+        .mix-number-input { width: 70px; padding: 8px; border: 1px solid var(--border-color); border-radius: 4px; text-align: center; font-family: inherit; font-weight: 600; }
+        .mix-max-info { font-size: 0.8rem; color: var(--text-muted); width: 60px; text-align: right; }
+
+        /* === MENU PILIHAN === */
+        .menu-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 20px; }
+        .menu-card { border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 24px; cursor: pointer; transition: var(--transition); display: flex; align-items: center; gap: 20px; background: var(--white); }
+        .menu-card:hover { border-color: var(--primary); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+        .menu-icon { font-size: 2rem; background: var(--bg-body); width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; border-radius: 50%; color: var(--primary); }
+        .menu-text h3 { color: var(--primary); margin-bottom: 4px; font-size: 1.2rem; font-weight: 700; }
+        .menu-text p { color: var(--text-muted); font-size: 0.9rem; font-weight: 300; }
+
+        /* === MATERI CSS === */
+        .materi-section { background: white; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; margin-bottom: 20px; }
+        .materi-title { font-size: 1.2rem; color: var(--primary); margin-bottom: 10px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; font-weight: 700;}
+        .materi-content h4 { color: var(--primary); margin-top: 15px; margin-bottom: 5px; }
+        .materi-content p, .materi-content ul { font-size: 0.95rem; color: var(--text-main); margin-bottom: 10px; }
+        .materi-content ul { padding-left: 20px; }
+        .trick-box { background: var(--bg-body); border-left: 4px solid var(--primary); padding: 12px 16px; border-radius: 4px; margin-top: 10px; font-size: 0.9rem; }
+
+        /* === QUIZ UI & QUESTION MAP === */
+        .quiz-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; border-bottom: 1px solid var(--border-color); margin-bottom: 20px; position: sticky; top: 0; background: var(--bg-card); z-index: 10; }
+        .timer-box { font-size: 1.2rem; font-weight: 700; color: var(--primary); background: var(--bg-body); border: 1px solid var(--border-color); padding: 6px 16px; border-radius: 8px; }
+        
+        .question-text { font-size: 1.15rem; line-height: 1.7; margin-bottom: 30px; color: var(--primary); font-weight: 400; }
+        
+        .options-container { display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; }
+        .option-btn { background: var(--white); border: 1px solid var(--border-color); padding: 16px 20px; border-radius: var(--radius-sm); font-size: 1rem; color: var(--text-main); text-align: left; cursor: pointer; transition: var(--transition); display: flex; align-items: flex-start; }
+        .option-btn:hover { border-color: var(--primary); background: var(--bg-body); }
+        .option-btn.selected { background: var(--primary); border-color: var(--primary); color: var(--white); font-weight: 500; }
+        .option-btn.selected .option-label { color: var(--white); }
+        .option-label { font-weight: 700; margin-right: 15px; min-width: 20px; color: var(--text-muted); }
+
+        .quiz-nav { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 20px; }
+        .quiz-nav button { flex: 1; padding: 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); font-weight: 600; cursor: pointer; transition: var(--transition); font-family: inherit;}
+        .btn-prev { background: var(--bg-body); color: var(--text-main); }
+        .btn-prev:hover { background: #e5e5e5; }
+        .btn-next { background: var(--primary); color: white; border-color: var(--primary); }
+        .btn-next:hover { background: var(--primary-hover); }
+
+        /* Peta Soal Grid */
+        .q-map-container { background: white; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; margin-top: 20px; }
+        .q-map-title { font-size: 1rem; font-weight: 700; margin-bottom: 15px; text-align: center; }
+        .q-map-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); gap: 8px; }
+        .q-map-btn { width: 100%; aspect-ratio: 1; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-body); font-weight: 600; font-size: 0.9rem; cursor: pointer; color: var(--text-muted); display:flex; align-items:center; justify-content:center; transition: var(--transition);}
+        .q-map-btn.answered { background: var(--primary); color: white; border-color: var(--primary); }
+        .q-map-btn.active { border: 2px solid var(--primary); transform: scale(1.1); font-weight: 700; box-shadow: var(--shadow-sm); background: var(--white); color: var(--primary);}
+        .q-map-btn.answered.active { background: var(--primary); color: white; border-color: var(--primary); outline: 2px solid var(--primary); outline-offset: 2px; }
+
+        /* === EVALUASI & REVIEW SOAL === */
+        .score-card { text-align: center; background: var(--primary); color: white; padding: 40px 20px; border-radius: var(--radius-md); margin-bottom: 30px; box-shadow: var(--shadow-md); }
+        .score-card h2 { font-size: 1.1rem; font-weight: 400; opacity: 0.8; margin-bottom: 10px; letter-spacing: 1px;}
+        .score-val { font-size: 4.5rem; font-weight: 800; line-height: 1; margin-bottom: 10px; letter-spacing: -2px;}
+        
+        .eval-detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 30px; }
+        .eval-detail-card { background: var(--white); border: 1px solid var(--border-color); padding: 15px; border-radius: var(--radius-sm); text-align: center; }
+        .eval-detail-title { font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 5px; }
+        .eval-detail-val { font-size: 1.4rem; font-weight: 700; color: var(--primary); }
+
+        .review-item { border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; margin-bottom: 20px; background: white; }
+        .review-header { display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: 600; font-size: 0.9rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;}
+        .badge { padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; border: 1px solid;}
+        .badge.benar { background: var(--primary); color: var(--white); border-color: var(--primary); }
+        .badge.salah { background: var(--white); color: var(--text-muted); border-color: var(--border-color); }
+        .badge.warning { background: var(--bg-body); color: var(--primary); border-color: var(--primary); } 
+        .badge.kosong { background: var(--bg-body); color: var(--text-muted); border-color: transparent;}
+        
+        .review-q { font-weight: 400; margin-bottom: 15px; font-size: 1.05rem;}
+        .review-ans { background: var(--bg-body); padding: 12px; border-radius: var(--radius-sm); font-size: 0.9rem; margin-bottom: 10px; border: 1px solid var(--border-color);}
+        .review-ans strong { display: block; margin-bottom: 4px; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;}
+        .review-expl { border-top: 1px dashed var(--border-color); padding-top: 15px; font-size: 0.95rem; margin-top: 15px;}
+
+        .loading-spinner { border: 3px solid rgba(0,0,0,0.1); width: 40px; height: 40px; border-radius: 50%; border-left-color: var(--primary); animation: spin 1s linear infinite; margin: 0 auto 20px; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        #error-msg { color: var(--danger); font-size: 0.9rem; margin-top: -10px; margin-bottom: 15px; display: none; font-weight: 500; }
+        
+        /* Utility badge umum */
+        .cat-badge { font-size: 0.75rem; background: var(--primary); color: white; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- SCREEN 0: LOADING -->
+        <div id="screen-loading" class="screen active text-center" style="justify-content: center;">
+            <div class="loading-spinner"></div>
+            <h3 class="title">Menghubungkan...</h3>
+            <p class="subtitle">Memuat data dan modul Shafaqo</p>
+        </div>
+
+        <!-- SCREEN 1: LOGIN & DASHBOARD -->
+        <div id="screen-login" class="screen">
+            <div class="slide-up">
+                
+                <div class="brand-header">
+                    <!-- Text logo atau Image logo. Jika ada URL image logo shafaqo, bisa dimasukkan di src -->
+                    <div style="font-size: 2.5rem; font-weight: 800; letter-spacing: -2px; line-height: 1; margin-bottom: 5px;">
+                        <span style="border: 2px solid #000; padding: 0 8px; border-radius: 8px; display: inline-block; margin-right: 5px;">S</span>
+                        shafaqo
+                    </div>
+                    <p class="subtitle" style="margin-bottom: 10px; font-size: 0.9rem;">Portal Simulasi CAT Terpadu</p>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">Masukkan Kode Akses VIP anda, Lihat halaman bawah untuk cara mendapatkan kode akses</label>
+                    <input type="text" id="kode-input" class="input-field" placeholder="KODE AKSES" style="text-transform: uppercase; font-weight: 700; text-align: center; letter-spacing: 2px; font-size: 1.2rem;">
+                </div>
+                <p id="error-msg">Kode akses tidak valid!</p>
+                
+                <button class="btn btn-primary mb-6" onclick="verifyCode()">Akses Portal Simulasi</button>
+
+                <!-- MINI DASHBOARD -->
+                <div class="dash-grid">
+                    <div class="dash-card">
+                        <div class="dash-val" id="dash-visitor">0</div>
+                        <div class="dash-label">Pengunjung</div>
+                    </div>
+                    <div class="dash-card">
+                        <div class="dash-val" id="dash-vip">0</div>
+                        <div class="dash-label">Member VIP</div>
+                    </div>
+                    <div class="dash-card">
+                        <div class="dash-val" id="dash-tests">0</div>
+                        <div class="dash-label">Ujian Selesai</div>
+                    </div>
+                </div>
+
+                <!-- LEADERBOARD & SEARCH (NEW FEATURE) -->
+                <div class="leaderboard-section">
+                    <div class="lb-header">
+                        <div class="lb-title">🏆 Top 9 Nilai Tertinggi</div>
+                    </div>
+                    
+                    <div class="search-box">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="search-lb" class="search-input" placeholder="Cari nama peserta untuk melihat nilai..." oninput="handleSearchLeaderboard()">
+                    </div>
+
+                    <div id="leaderboard-container" class="lb-list">
+                        <!-- Diisi JS -->
+                        <div class="text-center" style="font-size:0.9rem; opacity:0.5; padding: 20px;">Memuat data klasemen...</div>
+                    </div>
+                </div>
+
+                <!-- KOTAK PREMIUM PANDUAN -->
+                <div class="premium-box">
+                    <h3># Belum Punya Kode Akses?</h3>
+                    <div class="step-flow">
+                        <div class="step-item"><div class="step-num">1</div><div class="step-text">Silahkan Bayar/Transfer <strong>Rp 5.000</strong> ke salah satu opsi pembayaran di bawah.</div></div>
+                        <div class="step-item"><div class="step-num">2</div><div class="step-text">Klik tombol WhatsApp untuk konfirmasi ke nomor admin.</div></div>
+                        <div class="step-item"><div class="step-num">3</div><div class="step-text">Admin akan langsung membalas dengan memberikan <strong>Kode Akses VIP</strong> anda.</div></div>
+                    </div>
+                    <p style="margin-bottom: 12px; font-weight: 600; font-size: 0.95rem; color: var(--primary);">Pilih Metode Pembayaran:</p>
+                    <div class="pay-grid">
+                        <div class="pay-item" onclick="copyText('082273902728', 'DANA')">
+                            <div class="pay-item-left">
+                                <span style="font-weight: 800; font-size: 1.2rem; letter-spacing: -1px; width: 40px;">DANA</span>
+                                <div><span class="pay-text">0822 7390 2728</span><span class="pay-sub">a.n. Ahmad Ropat Tanjung</span></div>
+                            </div>
+                            <div class="copy-badge">Salin</div>
+                        </div>
+                        <div class="pay-item" onclick="copyText('082273902728', 'ShopeePay')">
+                            <div class="pay-item-left">
+                                <span style="font-weight: 800; font-size: 1.1rem; letter-spacing: -0.5px; width: 40px; line-height: 1;">Shopee Pay</span>
+                                <div><span class="pay-text">0822 7390 2728</span><span class="pay-sub">a.n. Ahmad Ropat Tanjung</span></div>
+                            </div>
+                            <div class="copy-badge">Salin</div>
+                        </div>
+                        <div class="pay-item" onclick="copyText('7207203418', 'BSI')">
+                            <div class="pay-item-left">
+                                <span style="font-weight: 800; font-size: 1.2rem; letter-spacing: -1px; width: 40px;">BSI</span>
+                                <div><span class="pay-text">7207203418</span><span class="pay-sub">a.n. Ahmad Ropat Tanjung</span></div>
+                            </div>
+                            <div class="copy-badge">Salin</div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6282273902728" target="_blank" class="btn btn-wa">Konfirmasi via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCREEN 2: MAIN MENU -->
+        <div id="screen-menu" class="screen">
+            <div class="slide-up">
+                <h1 class="title">Menu Utama</h1>
+                <p class="subtitle">Pilih mode persiapan Anda hari ini.</p>
+
+                <div class="menu-grid">
+                    <div class="menu-card" onclick="openScreen('screen-materi')">
+                        <div class="menu-icon">📖</div>
+                        <div class="menu-text">
+                            <h3>Modul Materi</h3>
+                            <p>Pelajari ringkasan TWK, TIU, TKP dengan cara paling efektif.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" onclick="openScreen('screen-setup')">
+                        <div class="menu-icon">⏱️</div>
+                        <div class="menu-text">
+                            <h3>Mulai Simulasi CAT</h3>
+                            <p>Uji kemampuanmu. Sistem poin akurat & real-time tracking.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCREEN 3: MATERI -->
+        <div id="screen-materi" class="screen" style="overflow-y: auto;">
+            <div class="slide-up">
+                <button class="btn-outline" style="padding: 8px 16px; border-radius: 8px; display: inline-block; width: auto; margin-bottom: 20px; font-size: 0.9rem;" onclick="openScreen('screen-menu')">← Kembali</button>
+                <h1 class="title mb-6">Modul Cepat</h1>
+                <div class="materi-section">
+                    <div class="materi-title"><span>📝 TKP (Karakteristik Pribadi)</span></div>
+                    <div class="materi-content"><p>Posisikan diri Anda sebagai pelayan masyarakat yang tak kenal lelah, profesional, dan berorientasi pada solusi.</p></div>
+                </div>
+                <div class="materi-section">
+                    <div class="materi-title"><span>🧮 TIU & TWK</span></div>
+                    <div class="materi-content">
+                        <p>Pahami logika silogisme dan hafalkan poin-poin pancasila terapan.</p>
+                        <div class="trick-box"><strong>Tips:</strong> Kerjakan TIU yang mudah lebih dulu. Jangan terpaku pada satu soal hitungan rumit.</div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="openScreen('screen-setup')">Lanjut Uji Simulasi</button>
+            </div>
+        </div>
+
+        <!-- SCREEN 4: SETUP SIMULASI (MIX KATEGORI NEW) -->
+        <div id="screen-setup" class="screen">
+            <div class="slide-up">
+                <button class="btn-outline" style="padding: 8px 16px; border-radius: 8px; display: inline-block; width: auto; margin-bottom: 20px; font-size: 0.9rem;" onclick="openScreen('screen-menu')">← Kembali</button>
+                
+                <h1 class="title">Setup Simulasi</h1>
+                <p class="subtitle"> Tentukan sendiri jumlah soal per kategori yang ingin Anda kerjakan. Biasanya untuk tes CPNS terdiri dari SKD sebanyak 110 soal meliputi 30 soal TWK 35 soal TIU dan 45 soal TKP serta SKB yang berkisar antara 80 hingga 100 soal tergantung jenis formasi jabatan yang dilamar. </p>
+
+                <div class="input-group">
+                    <label class="input-label">Nama Peserta/Pemain</label>
+                    <input type="text" id="username-input" class="input-field" placeholder="Masukkan nama atau alias Anda">
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">Pilih & Atur Jumlah Soal</label>
+                    <div class="setup-mix-container" id="mix-kategori-container">
+                        <!-- Checkbox & Input jumlah soal dinamis dari JS -->
+                    </div>
+                </div>
+
+                <button class="btn btn-primary mt-4" onclick="startSimulasi()">Mulai Mengerjakan</button>
+            </div>
+        </div>
+
+        <!-- SCREEN 5: QUIZ ENGINE -->
+        <div id="screen-quiz" class="screen">
+            <div class="quiz-header fade-in">
+                <div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; letter-spacing: 1px;">KATEGORI</div>
+                    <div id="quiz-badge-kategori" class="cat-badge">TIU</div>
+                </div>
+                <div class="text-right">
+                    <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; letter-spacing: 1px;">SISA WAKTU</div>
+                    <div id="timer" class="timer-box">00:00</div>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3 class="title" id="soal-counter" style="margin: 0; font-size: 1.5rem;">Soal 1/10</h3>
+                <button class="btn-outline" style="padding: 6px 12px; font-size: 0.85rem; width: auto; border-radius: 6px;" onclick="toggleMap()">Peta Soal</button>
+            </div>
+
+            <div id="question-map" class="q-map-container" style="display: none;">
+                <div class="q-map-title">Navigasi Peta Soal</div>
+                <div id="map-grid" class="q-map-grid"></div>
+                <button class="btn btn-primary mt-6" style="padding: 12px;" onclick="submitUjian()">Selesai & Kumpulkan Jawaban</button>
+            </div>
+
+            <div id="quiz-body" class="slide-up">
+                <div id="question-text" class="question-text"></div>
+                <div id="options-container" class="options-container"></div>
+                <div class="quiz-nav">
+                    <button id="btn-prev" class="btn-prev" onclick="navQuestion(-1)">Sebelumnya</button>
+                    <button id="btn-next" class="btn-next" onclick="navQuestion(1)">Selanjutnya</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCREEN 6: EVALUASI & PEMBAHASAN -->
+        <div id="screen-eval" class="screen" style="overflow-y: auto;">
+            <div class="slide-up">
+                <h1 class="title text-center mb-2">Evaluasi Hasil</h1>
+                <p class="subtitle text-center mb-6">Analisa detail poin simulasi Anda.</p>
+
+                <div class="score-card">
+                    <h2>TOTAL SKOR AKHIR</h2>
+                    <div class="score-val" id="eval-score">0</div>
+                    <div style="font-size: 0.95rem; opacity: 0.8; font-weight: 300;">Diselesaikan dalam <span id="eval-time" style="font-weight: 600;">0</span></div>
+                </div>
+
+                <h3 class="title" style="font-size: 1.2rem; margin-bottom: 15px;">Detail Per Kategori</h3>
+                <div class="eval-detail-grid" id="eval-kategori-grid">
+                    <!-- Detail skor kategori diisi JS -->
+                </div>
+
+                <h3 class="title" style="font-size: 1.2rem; margin-top: 30px; margin-bottom: 15px;">Pembahasan Soal</h3>
+                <div id="review-container">
+                    <!-- Diisi JS -->
+                </div>
+
+                <button class="btn btn-primary mt-6" onclick="location.reload()">Kembali ke Halaman Utama</button>
+            </div>
+        </div>
+
+    </div>
+    
+    <!-- TOAST ELEMENT UTK NOTIFIKASI COPY -->
+    <div id="toast">Notifikasi</div>
+
+    <script>
+        // =========================================================================
+        // GANTI DENGAN URL WEB APP GOOGLE APPS SCRIPT ANDA YANG BARU!
+        const APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzuWMkRkZTz85A5LZEa_9l_PgVBdY1S5nPs8iLEoC46lt1kX6rJPx7J9QIftnoowLMl/exec"; 
+        // =========================================================================
+
+        let DB = { pengaturan: {}, soal: [], kodeAkses: [], dashboard: {}, kategoriUnik: [], leaderboardData: [] };
+        
+        let quizSession = {
+            playerName: "",
+            kategoriDipilih: "",
+            soalAktif: [],
+            jawabanUser: [],
+            currentIndex: 0,
+            waktuTotal: 0,
+            waktuSisa: 0,
+            timerInterval: null
+        };
+
+        const screens = ['screen-loading', 'screen-login', 'screen-menu', 'screen-materi', 'screen-setup', 'screen-quiz', 'screen-eval'];
+
+        function openScreen(screenId) {
+            screens.forEach(s => document.getElementById(s).classList.remove('active'));
+            document.getElementById(screenId).classList.add('active');
+            window.scrollTo(0,0);
+        }
+
+        window.onload = async function() {
+            try {
+                const response = await fetch(APP_SCRIPT_URL);
+                const data = await response.json();
+
+                if(data.status === 'success') {
+                    DB = data;
+                    
+                    const katSet = new Set();
+                    DB.soal.forEach(s => katSet.add(s.kategori));
+                    DB.kategoriUnik = Array.from(katSet).sort();
+
+                    document.getElementById('dash-visitor').textContent = DB.dashboard.kunjungan;
+                    document.getElementById('dash-vip').textContent = DB.dashboard.totalVIP;
+                    document.getElementById('dash-tests').textContent = DB.dashboard.totalUjian;
+
+                    // Init Leaderboard (Top 9 Default)
+                    renderLeaderboard(DB.leaderboardData, false);
+
+                    // Init Setup Mix Kategori
+                    renderSetupMix();
+
+                    openScreen('screen-login');
+                } else {
+                    throw new Error(data.message || "Gagal load data");
+                }
+            } catch (error) {
+                document.getElementById('screen-loading').innerHTML = `<div class="text-center" style="padding:20px;"><p style="color:var(--danger); font-weight:700; margin-bottom:10px;">Gagal Terhubung Server</p><p style="font-size:0.9rem;">${error.message}</p></div>`;
+            }
+        };
+
+        // --- FITUR LEADERBOARD (TOP 9 & SEARCH) ---
+        function renderLeaderboard(dataList, isSearchActive) {
+            const container = document.getElementById('leaderboard-container');
+            container.innerHTML = "";
+
+            let displayData = [];
+            if(isSearchActive) {
+                displayData = dataList; // Tampilkan hasil pencarian (berapapun jumlahnya)
+            } else {
+                displayData = dataList.slice(0, 9); // Tampilkan Top 9 saja jika tidak mencari
+            }
+
+            if(displayData.length === 0) {
+                container.innerHTML = `<div class="text-center" style="font-size:0.9rem; color:var(--text-muted); padding:20px;">Data tidak ditemukan.</div>`;
+                return;
+            }
+
+            displayData.forEach(user => {
+                let durasiStr = Math.floor(user.waktu / 60) + "m " + (user.waktu % 60) + "s";
+                
+                // Build Detail Kategori HTML
+                let katHTML = "";
+                if(user.detailKategori && Object.keys(user.detailKategori).length > 0) {
+                    for (const [kat, data] of Object.entries(user.detailKategori)) {
+                        katHTML += `<div class="lb-kat-item"><strong>${kat}:</strong> ${data.skor} Poin (${data.dijawab}/${data.total})</div>`;
+                    }
+                } else {
+                    katHTML = `<div class="lb-kat-item">Detail kategori tidak tersedia (Data lama)</div>`;
+                }
+
+                const cardHTML = `
+                <div class="lb-card rank-${user.rank}">
+                    <div class="lb-top-row">
+                        <div class="lb-rank">#${user.rank}</div>
+                        <div class="lb-name">${user.username}</div>
+                        <div class="lb-score">${user.score}</div>
+                    </div>
+                    <div class="lb-detail-row">
+                        <span>Total Soal: ${user.totalSoal || '-'}</span>
+                        <span>Durasi: ${durasiStr}</span>
+                        <span>Mode: ${user.kategori}</span>
+                    </div>
+                    <div class="lb-kat-grid">
+                        ${katHTML}
+                    </div>
+                </div>
+                `;
+                container.innerHTML += cardHTML;
+            });
+        }
+
+        function handleSearchLeaderboard() {
+            const query = document.getElementById('search-lb').value.trim().toLowerCase();
+            if(query === "") {
+                // Reset ke Top 9
+                renderLeaderboard(DB.leaderboardData, false);
+            } else {
+                // Filter berdasarkan nama
+                const filtered = DB.leaderboardData.filter(user => user.username.toLowerCase().includes(query));
+                renderLeaderboard(filtered, true);
+            }
+        }
+
+        function verifyCode() {
+            const input = document.getElementById('kode-input').value.trim().toUpperCase();
+            const err = document.getElementById('error-msg');
+            
+            if (!DB.kodeAkses.includes(input)) {
+                err.style.display = 'block';
+                return;
+            }
+            err.style.display = 'none';
+            openScreen('screen-menu');
+        }
+
+        // --- FITUR SETUP MIX KATEGORI ---
+        function renderSetupMix() {
+            const container = document.getElementById('mix-kategori-container');
+            container.innerHTML = "";
+
+            DB.kategoriUnik.forEach(kat => {
+                let maxSoal = DB.soal.filter(s => s.kategori === kat).length;
+                let defaultVal = maxSoal >= 10 ? 10 : maxSoal;
+
+                container.innerHTML += `
+                <div class="mix-item">
+                    <label class="mix-checkbox-label">
+                        <input type="checkbox" class="mix-checkbox" id="check_${kat}" checked onchange="toggleMixInput('${kat}')"> 
+                        ${kat}
+                    </label>
+                    <div class="mix-input-group">
+                        <input type="number" id="num_${kat}" class="mix-number-input" value="${defaultVal}" min="1" max="${maxSoal}">
+                        <div class="mix-max-info">Max: ${maxSoal}</div>
+                    </div>
+                </div>
+                `;
+            });
+        }
+
+        function toggleMixInput(kat) {
+            const isChecked = document.getElementById(`check_${kat}`).checked;
+            const inputNum = document.getElementById(`num_${kat}`);
+            inputNum.disabled = !isChecked;
+            if(!isChecked) inputNum.style.opacity = '0.5';
+            else inputNum.style.opacity = '1';
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function startSimulasi() {
+            const nama = document.getElementById('username-input').value.trim();
+            if(!nama) { alert("Nama lengkap wajib diisi!"); return; }
+
+            let poolSoalTerpilih = [];
+            let kategoriNamaArr = [];
+            let totalSoalDiinginkan = 0;
+
+            // Kumpulkan soal berdasarkan kategori yang di-checklist
+            DB.kategoriUnik.forEach(kat => {
+                const checkbox = document.getElementById(`check_${kat}`);
+                if(checkbox && checkbox.checked) {
+                    let numInput = parseInt(document.getElementById(`num_${kat}`).value);
+                    let poolFiltered = DB.soal.filter(s => s.kategori === kat);
+                    
+                    if(isNaN(numInput) || numInput < 1) numInput = 1;
+                    if(numInput > poolFiltered.length) numInput = poolFiltered.length;
+
+                    poolFiltered = shuffleArray(poolFiltered);
+                    poolSoalTerpilih = poolSoalTerpilih.concat(poolFiltered.slice(0, numInput));
+                    kategoriNamaArr.push(kat);
+                    totalSoalDiinginkan += numInput;
+                }
+            });
+
+            if(poolSoalTerpilih.length === 0) {
+                alert("Pilih minimal 1 kategori dan tentukan jumlah soalnya!"); return;
+            }
+
+            // Acak urutan antar kategori agar benar-benar MIX
+            quizSession.soalAktif = shuffleArray(poolSoalTerpilih);
+            
+            quizSession.playerName = nama;
+            quizSession.kategoriDipilih = kategoriNamaArr.length === DB.kategoriUnik.length ? "SEMUA (MIX)" : kategoriNamaArr.join(", ");
+            quizSession.jawabanUser = new Array(quizSession.soalAktif.length).fill(null);
+            quizSession.currentIndex = 0;
+
+            const detikPerSoal = parseInt(DB.pengaturan.waktuPerSoal) || 54;
+            quizSession.waktuTotal = quizSession.soalAktif.length * detikPerSoal;
+            quizSession.waktuSisa = quizSession.waktuTotal;
+
+            renderQuestionMap();
+            loadQuestion(0);
+            startGlobalTimer();
+
+            openScreen('screen-quiz');
+        }
+
+        function startGlobalTimer() {
+            clearInterval(quizSession.timerInterval);
+            const timerEl = document.getElementById('timer');
+            timerEl.style.color = "var(--primary)";
+            
+            quizSession.timerInterval = setInterval(() => {
+                quizSession.waktuSisa--;
+                
+                let m = Math.floor(quizSession.waktuSisa / 60).toString().padStart(2, '0');
+                let s = (quizSession.waktuSisa % 60).toString().padStart(2, '0');
+                timerEl.textContent = `${m}:${s}`;
+
+                if (quizSession.waktuSisa <= 60) {
+                    timerEl.style.color = "#dc2626"; // Merah
+                }
+
+                if (quizSession.waktuSisa <= 0) {
+                    clearInterval(quizSession.timerInterval);
+                    alert("Waktu Habis! Jawaban otomatis dikumpulkan.");
+                    submitUjian();
+                }
+            }, 1000);
+        }
+
+        function toggleMap() {
+            const map = document.getElementById('question-map');
+            const body = document.getElementById('quiz-body');
+            if(map.style.display === 'none') {
+                map.style.display = 'block'; body.style.display = 'none'; renderQuestionMap();
+            } else {
+                map.style.display = 'none'; body.style.display = 'block';
+            }
+        }
+
+        function renderQuestionMap() {
+            const grid = document.getElementById('map-grid');
+            grid.innerHTML = '';
+            for(let i=0; i<quizSession.soalAktif.length; i++) {
+                let btn = document.createElement('button');
+                btn.className = 'q-map-btn';
+                if(quizSession.jawabanUser[i] !== null) btn.classList.add('answered');
+                if(i === quizSession.currentIndex) btn.classList.add('active');
+                btn.textContent = i + 1;
+                btn.onclick = () => { loadQuestion(i); toggleMap(); };
+                grid.appendChild(btn);
+            }
+        }
+
+        function loadQuestion(index) {
+            quizSession.currentIndex = index;
+            const soalData = quizSession.soalAktif[index];
+
+            document.getElementById('soal-counter').textContent = `Soal ${index + 1} / ${quizSession.soalAktif.length}`;
+            document.getElementById('quiz-badge-kategori').textContent = soalData.kategori;
+            document.getElementById('question-text').innerHTML = soalData.teksSoal;
+
+            document.getElementById('btn-prev').style.visibility = index === 0 ? 'hidden' : 'visible';
+            
+            if(index === quizSession.soalAktif.length - 1) {
+                document.getElementById('btn-next').textContent = "Kumpulkan Selesai";
+                document.getElementById('btn-next').style.background = "var(--primary)";
+            } else {
+                document.getElementById('btn-next').textContent = "Selanjutnya";
+                document.getElementById('btn-next').style.background = "var(--primary)";
+            }
+
+            const optsContainer = document.getElementById('options-container');
+            optsContainer.innerHTML = '';
+            
+            soalData.pilihan.forEach(pil => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn';
+                if(quizSession.jawabanUser[index] === pil.huruf) btn.classList.add('selected');
+                
+                btn.innerHTML = `<span class="option-label">${pil.huruf}.</span> <div>${pil.teks}</div>`;
+                btn.onclick = function() {
+                    quizSession.jawabanUser[index] = pil.huruf;
+                    Array.from(optsContainer.children).forEach(c => c.classList.remove('selected'));
+                    this.classList.add('selected');
+                };
+                optsContainer.appendChild(btn);
+            });
+        }
+
+        function navQuestion(dir) {
+            if (dir === 1 && quizSession.currentIndex === quizSession.soalAktif.length - 1) {
+                let blmDijawab = quizSession.jawabanUser.filter(x => x === null).length;
+                let msg = blmDijawab > 0 ? `Ada ${blmDijawab} soal yang belum dijawab. Yakin kumpulkan?` : `Yakin ingin mengumpulkan jawaban sekarang?`;
+                if(confirm(msg)) submitUjian();
+                return;
+            }
+            let nextIndex = quizSession.currentIndex + dir;
+            if(nextIndex >= 0 && nextIndex < quizSession.soalAktif.length) loadQuestion(nextIndex);
+        }
+
+        async function submitUjian() {
+            clearInterval(quizSession.timerInterval);
+            const waktuTerpakai = quizSession.waktuTotal - quizSession.waktuSisa;
+            
+            let totalSkor = 0;
+            let reviewHTML = "";
+            let kategoriStat = {}; // Untuk menyimpan statisik per kategori
+
+            // Inisialisasi struktur stat kategori
+            DB.kategoriUnik.forEach(k => {
+                kategoriStat[k] = { skor: 0, dijawab: 0, total: 0 };
+            });
+
+            quizSession.soalAktif.forEach((soal, i) => {
+                let userAns = quizSession.jawabanUser[i];
+                let pointsGained = 0;
+                let opsiUserTeks = "<i>Tidak dijawab</i>";
+                let bestOption = soal.pilihan.reduce((max, p) => p.poin > max.poin ? p : max, soal.pilihan[0]);
+
+                kategoriStat[soal.kategori].total += 1; // Tambah total soal kategori ini
+
+                if(userAns) {
+                    kategoriStat[soal.kategori].dijawab += 1;
+                    let chosen = soal.pilihan.find(p => p.huruf === userAns);
+                    if(chosen) {
+                        pointsGained = chosen.poin;
+                        opsiUserTeks = chosen.teks;
+                    }
+                }
+                
+                totalSkor += pointsGained;
+                kategoriStat[soal.kategori].skor += pointsGained;
+
+                let badgeClass = "kosong"; let badgeText = "Kosong (0)";
+                if (userAns) {
+                    if (pointsGained === 5) { badgeClass = "benar"; badgeText = `Tepat (+5)`; }
+                    else if (pointsGained > 0) { badgeClass = "warning"; badgeText = `Poin: +${pointsGained}`; }
+                    else { badgeClass = "salah"; badgeText = `Salah (0)`; }
+                }
+
+                reviewHTML += `
+                <div class="review-item">
+                    <div class="review-header">
+                        <span>Soal No. ${i+1} <span class="cat-badge" style="margin-left:5px;">${soal.kategori}</span></span>
+                        <span class="badge ${badgeClass}">${badgeText}</span>
+                    </div>
+                    <div class="review-q">${soal.teksSoal}</div>
+                    <div class="review-ans">
+                        <strong>Jawaban Anda:</strong> ${userAns || '-'} - ${opsiUserTeks}
+                    </div>
+                    <div class="review-ans" style="background: #fafafa; border: 1px solid #ddd;">
+                        <strong>Poin Tertinggi (+5):</strong> ${bestOption.huruf} - ${bestOption.teks}
+                    </div>
+                    <div class="review-expl">
+                        <strong style="color:var(--primary); font-size:0.8rem; text-transform:uppercase;">Pembahasan:</strong><br>
+                        ${soal.pembahasanHTML || 'Tidak ada pembahasan spesifik untuk soal ini.'}
+                    </div>
+                </div>`;
+            });
+
+            // Render Nilai Keseluruhan
+            document.getElementById('eval-score').textContent = totalSkor;
+            document.getElementById('eval-time').textContent = Math.floor(waktuTerpakai / 60) + "m " + (waktuTerpakai % 60) + "s";
+            
+            // Render Detail Nilai Per Kategori
+            let evalKatHTML = "";
+            for (const [kat, data] of Object.entries(kategoriStat)) {
+                if(data.total > 0) { // Hanya tampilkan kategori yang dikerjakan
+                    evalKatHTML += `
+                    <div class="eval-detail-card">
+                        <div class="eval-detail-title">${kat}</div>
+                        <div class="eval-detail-val">${data.skor} <span style="font-size:0.8rem; font-weight:400; color:var(--text-muted)">Poin</span></div>
+                        <div style="font-size:0.75rem; color:var(--text-muted); margin-top:5px;">Terjawab: ${data.dijawab}/${data.total}</div>
+                    </div>`;
+                }
+            }
+            // Bersihkan data stat yang totalnya 0 (tidak dipilih) untuk dikirim ke DB
+            for (let key in kategoriStat) {
+                if(kategoriStat[key].total === 0) delete kategoriStat[key];
+            }
+
+            document.getElementById('eval-kategori-grid').innerHTML = evalKatHTML;
+            document.getElementById('review-container').innerHTML = reviewHTML;
+            
+            openScreen('screen-eval');
+
+            // Kirim Payload ke server dengan penambahan Kategori Detail & Total Soal
+            const payload = { 
+                username: quizSession.playerName, 
+                score: totalSkor, 
+                waktuTerpakai: waktuTerpakai, 
+                kategori: quizSession.kategoriDipilih,
+                detailKategori: kategoriStat,
+                totalSoal: quizSession.soalAktif.length
+            };
+            try {
+                fetch(APP_SCRIPT_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) });
+            } catch (err) {}
+        }
+
+        function copyText(text, method) {
+            const tempInput = document.createElement("input");
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999);
+            try { document.execCommand("copy"); showToast("Nomor " + method + " disalin!"); } 
+            catch (err) { showToast("Gagal menyalin."); }
+            document.body.removeChild(tempInput);
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById("toast");
+            toast.textContent = message; toast.className = "show";
+            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+        }
+
+    </script>
+</body>
+</html>
