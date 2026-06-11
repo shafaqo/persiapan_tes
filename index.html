@@ -1127,7 +1127,7 @@
 
                 <div class="input-group">
                     <label class="input-label">Masukkan Kode Akses VIP anda, Lihat ke halaman bawah untuk cara
-                        mendapatkan kode akses</label>
+                        mendapatkan kode akses atau <a href="#info-kode-akses" style="color: var(--primary); font-weight: bold; text-decoration: underline;">klik disini</a>.</label>
                     <input type="text" id="kode-input" class="input-field" placeholder="KODE AKSES"
                         style="text-transform: uppercase; font-weight: 700; text-align: center; letter-spacing: 2px; font-size: 1.2rem;">
                 </div>
@@ -1171,7 +1171,7 @@
                 </div>
 
                 <!-- KOTAK PREMIUM PANDUAN -->
-                <div class="premium-box">
+                <div id="info-kode-akses" class="premium-box">
                     <h3># Belum Punya Kode Akses?</h3>
                     <div class="step-flow">
                         <div class="step-item">
@@ -1258,6 +1258,13 @@
                 <button class="btn-outline"
                     style="padding: 8px 16px; border-radius: 8px; display: inline-block; width: auto; margin-bottom: 20px; font-size: 0.9rem;"
                     onclick="openScreen('screen-menu')">← Kembali</button>
+                    <div class="search-box" style="margin-bottom: 20px;">
+                            <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        <input type="text" id="inputSearchMateri" class="search-input" placeholder="Cari judul materi di sini..." onkeyup="cariMateri()">
+                    </div>
                 <h1 class="title">Modul Cepat : Buku Pintar CPNS</h1>
                 <p class="subtitle">Edisi Master: Super Lengkap + Trik Cepat</p>
                 <div class="materi-section">
@@ -2486,6 +2493,25 @@
             toast.textContent = message; toast.className = "show";
             setTimeout(function () { toast.className = toast.className.replace("show", ""); }, 3000);
         }
+
+        function cariMateri() {
+            // Mengambil kata kunci yang diketik user
+            let input = document.getElementById('inputSearchMateri').value.toLowerCase();
+            // Mengambil semua kotak materi (pastikan class sesuai dengan kotak materi Anda, misalnya 'materi-section' atau 'materi-content')
+            let daftarMateri = document.getElementsByClassName('materi-section');
+            // Melakukan perulangan untuk mengecek setiap materi
+            for (let i = 0; i < daftarMateri.length; i++) {
+                // Mengambil teks dari dalam materi tersebut
+                let teksMateri = daftarMateri[i].innerText.toLowerCase();
+                // Menyembunyikan materi jika tidak cocok, memunculkan jika cocok
+                    if (teksMateri.includes(input)) {
+                        daftarMateri[i].style.display = "block";
+                    } 
+                    else {
+                        daftarMateri[i].style.display = "none";
+                    }
+                }
+            }
 
     </script>
 </body>
