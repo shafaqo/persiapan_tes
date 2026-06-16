@@ -87,25 +87,13 @@
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .screen {
@@ -120,26 +108,13 @@
         }
 
         @media (min-width: 640px) {
-            .screen {
-                padding: 40px;
-            }
+            .screen { padding: 40px; }
         }
 
-        .text-center {
-            text-align: center;
-        }
-
-        .mb-2 {
-            margin-bottom: 8px;
-        }
-
-        .mb-4 {
-            margin-bottom: 16px;
-        }
-
-        .mb-6 {
-            margin-bottom: 24px;
-        }
+        .text-center { text-align: center; }
+        .mb-2 { margin-bottom: 8px; }
+        .mb-4 { margin-bottom: 16px; }
+        .mb-6 { margin-bottom: 24px; }
 
         h1.title {
             font-size: 2rem;
@@ -240,7 +215,6 @@
             opacity: 0.5;
         }
 
-        /* Grid Mode (Default Top 9) */
         .lb-icon-grid {
             display: flex;
             flex-wrap: wrap;
@@ -281,30 +255,11 @@
             box-shadow: var(--shadow-md);
         }
 
-        .lb-icon-btn.rank-1 {
-            background: #FFD700;
-            color: #fff;
-            border-color: #DAA520;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-        }
+        .lb-icon-btn.rank-1 { background: #FFD700; color: #fff; border-color: #DAA520; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); }
+        .lb-icon-btn.rank-2 { background: #C0C0C0; color: #fff; border-color: #A9A9A9; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); }
+        .lb-icon-btn.rank-3 { background: #CD7F32; color: #fff; border-color: #8B4513; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); }
 
-        .lb-icon-btn.rank-2 {
-            background: #C0C0C0;
-            color: #fff;
-            border-color: #A9A9A9;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-        }
-
-        .lb-icon-btn.rank-3 {
-            background: #CD7F32;
-            color: #fff;
-            border-color: #8B4513;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-        }
-
-        .lb-icon-btn.rank-1.active,
-        .lb-icon-btn.rank-2.active,
-        .lb-icon-btn.rank-3.active {
+        .lb-icon-btn.rank-1.active, .lb-icon-btn.rank-2.active, .lb-icon-btn.rank-3.active {
             border-color: var(--text-main);
             transform: scale(1.15);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -320,11 +275,8 @@
             animation: slideUp 0.3s ease;
         }
 
-        .lb-detail-box.show {
-            display: block;
-        }
+        .lb-detail-box.show { display: block; }
 
-        /* List Mode (Search Results) */
         .lb-list {
             display: flex;
             flex-direction: column;
@@ -339,10 +291,7 @@
             transition: var(--transition);
         }
 
-        .lb-card:hover {
-            border-color: var(--primary);
-            box-shadow: var(--shadow-md);
-        }
+        .lb-card:hover { border-color: var(--primary); box-shadow: var(--shadow-md); }
 
         .lb-top-row {
             display: flex;
@@ -351,28 +300,9 @@
             margin-bottom: 8px;
         }
 
-        .lb-rank {
-            font-weight: 800;
-            font-size: 1.1rem;
-            width: 30px;
-            color: var(--text-muted);
-        }
-
-        .lb-name {
-            font-weight: 600;
-            font-size: 1.05rem;
-            flex-grow: 1;
-            color: var(--primary);
-        }
-
-        .lb-score {
-            font-weight: 800;
-            font-size: 1.2rem;
-            color: var(--primary);
-            background: var(--bg-body);
-            padding: 4px 10px;
-            border-radius: 6px;
-        }
+        .lb-rank { font-weight: 800; font-size: 1.1rem; width: 30px; color: var(--text-muted); }
+        .lb-name { font-weight: 600; font-size: 1.05rem; flex-grow: 1; color: var(--primary); }
+        .lb-score { font-weight: 800; font-size: 1.2rem; color: var(--primary); background: var(--bg-body); padding: 4px 10px; border-radius: 6px; }
 
         .lb-detail-row {
             font-size: 0.8rem;
@@ -392,24 +322,10 @@
             font-size: 0.8rem;
         }
 
-        .lb-kat-item {
-            background: var(--bg-body);
-            padding: 6px 8px;
-            border-radius: 4px;
-            border: 1px solid var(--border-color);
-        }
-
-        .rank-1 .lb-rank {
-            color: #000;
-        }
-
-        .rank-2 .lb-rank {
-            color: #333;
-        }
-
-        .rank-3 .lb-rank {
-            color: #666;
-        }
+        .lb-kat-item { background: var(--bg-body); padding: 6px 8px; border-radius: 4px; border: 1px solid var(--border-color); }
+        .rank-1 .lb-rank { color: #000; }
+        .rank-2 .lb-rank { color: #333; }
+        .rank-3 .lb-rank { color: #666; }
 
         .premium-box {
             background: var(--white);
@@ -421,22 +337,8 @@
             box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.05);
         }
 
-        .premium-box h3 {
-            font-size: 1.3rem;
-            color: var(--primary);
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-        }
-
-        .premium-box p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-            line-height: 1.6;
-        }
+        .premium-box h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; font-weight: 700; }
+        .premium-box p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 24px; line-height: 1.6; }
 
         .step-flow {
             display: flex;
@@ -449,110 +351,21 @@
             border: 1px solid var(--border-color);
         }
 
-        .step-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+        .step-item { display: flex; align-items: center; gap: 12px; }
+        .step-num { width: 24px; height: 24px; background: var(--primary); color: var(--white); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; }
+        .step-text { font-size: 0.9rem; color: var(--text-main); line-height: 1.4; }
+        .step-text strong { color: var(--primary); font-weight: 700; }
 
-        .step-num {
-            width: 24px;
-            height: 24px;
-            background: var(--primary);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 0.85rem;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
+        .pay-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 24px; }
+        .pay-item { background: var(--white); border: 1px solid var(--border-color); padding: 16px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: var(--transition); }
+        .pay-item:hover { border-color: var(--primary); box-shadow: var(--shadow-sm); }
+        .pay-item-left { display: flex; align-items: center; gap: 16px; }
+        .pay-text { font-weight: 600; font-size: 1rem; color: var(--primary); }
+        .pay-sub { font-size: 0.8rem; color: var(--text-muted); display: block; margin-top: 2px; }
+        .copy-badge { font-size: 0.75rem; background: var(--bg-body); border: 1px solid var(--border-color); color: var(--primary); padding: 6px 12px; border-radius: 20px; font-weight: 600; display: flex; align-items: center; gap: 4px; }
 
-        .step-text {
-            font-size: 0.9rem;
-            color: var(--text-main);
-            line-height: 1.4;
-        }
-
-        .step-text strong {
-            color: var(--primary);
-            font-weight: 700;
-        }
-
-        .pay-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-            margin-bottom: 24px;
-        }
-
-        .pay-item {
-            background: var(--white);
-            border: 1px solid var(--border-color);
-            padding: 16px;
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .pay-item:hover {
-            border-color: var(--primary);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .pay-item-left {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .pay-text {
-            font-weight: 600;
-            font-size: 1rem;
-            color: var(--primary);
-        }
-
-        .pay-sub {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            display: block;
-            margin-top: 2px;
-        }
-
-        .copy-badge {
-            font-size: 0.75rem;
-            background: var(--bg-body);
-            border: 1px solid var(--border-color);
-            color: var(--primary);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .btn-wa {
-            background: #25D366;
-            color: white;
-            text-decoration: none;
-            border-radius: var(--radius-sm);
-            font-weight: 600;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 16px;
-            width: 100%;
-            transition: var(--transition);
-        }
-
-        .btn-wa:hover {
-            background: #1ebd5a;
-        }
+        .btn-wa { background: #25D366; color: white; text-decoration: none; border-radius: var(--radius-sm); font-weight: 600; display: flex; justify-content: center; align-items: center; padding: 16px; width: 100%; transition: var(--transition); }
+        .btn-wa:hover { background: #1ebd5a; }
 
         #toast {
             visibility: hidden;
@@ -574,700 +387,144 @@
             box-shadow: var(--shadow-lg);
         }
 
-        #toast.show {
-            visibility: visible;
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        .input-group {
-            margin-bottom: 20px;
-            width: 100%;
-        }
-
-        .input-label {
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--text-main);
-        }
-
-        .input-field {
-            width: 100%;
-            padding: 16px 20px;
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--border-color);
-            font-size: 1rem;
-            font-family: inherit;
-            transition: var(--transition);
-            background: var(--white);
-        }
-
-        .input-field:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
-        }
-
-        .btn {
-            width: 100%;
-            padding: 16px 24px;
-            border-radius: var(--radius-sm);
-            font-size: 1.05rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            font-family: inherit;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            border: 1px solid var(--primary);
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-hover);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn-outline {
-            background: var(--white);
-            color: var(--primary);
-            border: 1px solid var(--border-color);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--primary);
-            background: var(--bg-body);
-        }
-
-        .btn-danger-outline {
-            background: transparent;
-            color: var(--danger);
-            border: 1px solid var(--danger);
-        }
-
-        .btn-danger-outline:hover {
-            background: var(--danger);
-            color: #fff;
-        }
-
-        .setup-mix-container {
-            background: var(--white);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-sm);
-            padding: 16px;
-            margin-bottom: 20px;
-        }
-
-        .mix-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .mix-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .mix-checkbox-label {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .mix-checkbox {
-            width: 18px;
-            height: 18px;
-            accent-color: var(--primary);
-            cursor: pointer;
-        }
-
-        .mix-input-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .mix-number-input {
-            width: 70px;
-            padding: 8px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            text-align: center;
-            font-family: inherit;
-            font-weight: 600;
-        }
-
-        .mix-max-info {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            width: 60px;
-            text-align: right;
-        }
-
-        .menu-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-            margin-top: 20px;
-        }
-
-        .menu-card {
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 24px;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            background: var(--white);
-        }
-
-        .menu-card:hover {
-            border-color: var(--primary);
-            box-shadow: var(--shadow-md);
-            transform: translateY(-3px);
-        }
-
-        .menu-icon {
-            font-size: 2rem;
-            background: var(--bg-body);
-            width: 60px;
-            height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            color: var(--primary);
-        }
-
-        .menu-text h3 {
-            color: var(--primary);
-            margin-bottom: 4px;
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        .menu-text p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            font-weight: 300;
-        }
-
-        .chat-container {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            background: #fff;
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            height: 500px;
-            margin-bottom: 20px;
-        }
-
-        .chat-messages {
-            flex-grow: 1;
-            padding: 15px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            background: var(--bg-body);
-        }
-
-        .chat-bubble {
-            background: #fff;
-            padding: 10px 15px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            width: 100%;
-            position: relative;
-        }
-
-        .chat-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        .chat-name {
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .chat-text {
-            font-size: 0.95rem;
-            color: var(--text-main);
-            margin-bottom: 8px;
-        }
-
-        .chat-action {
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        .btn-like {
-            background: none;
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 4px 10px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            color: var(--text-muted);
-            transition: var(--transition);
-        }
-
-        .btn-like:hover {
-            border-color: #ff4757;
-            color: #ff4757;
-        }
-
-        .btn-like.liked {
-            background: #ffeaa7;
-            border-color: #fdcb6e;
-            color: #e17055;
-        }
-
-        .chat-input-area {
-            display: flex;
-            padding: 10px;
-            background: #fff;
-            border-top: 1px solid var(--border-color);
-            gap: 10px;
-        }
-
-        .chat-input {
-            flex-grow: 1;
-            padding: 10px 15px;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-            outline: none;
-            font-family: inherit;
-        }
-
-        .chat-send {
-            background: var(--primary);
-            color: #fff;
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .materi-section {
-            background: white;
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .materi-title {
-            font-size: 1.2rem;
-            color: var(--primary);
-            margin-bottom: 10px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .materi-content h4 {
-            color: var(--primary);
-            margin-top: 15px;
-            margin-bottom: 5px;
-        }
-
-        .materi-content p,
-        .materi-content ul {
-            font-size: 0.95rem;
-            color: var(--text-main);
-            margin-bottom: 10px;
-        }
-
-        .materi-content ul {
-            padding-left: 20px;
-        }
-
-        .trick-box {
-            background: var(--bg-body);
-            border-left: 4px solid var(--primary);
-            padding: 12px 16px;
-            border-radius: 4px;
-            margin-top: 10px;
-            font-size: 0.9rem;
-        }
-
-        /* Map Kotak */
-        .q-map-container {
-            background: white;
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        .q-map-title {
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .q-map-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-            gap: 8px;
-        }
-
-        .q-map-btn {
-            width: 100%;
-            aspect-ratio: 1;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
-            background: var(--bg-body);
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .q-map-btn.answered {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-
-        .q-map-btn.active {
-            border: 2px solid var(--primary);
-            transform: scale(1.1);
-            font-weight: 700;
-            box-shadow: var(--shadow-sm);
-            background: var(--white);
-            color: var(--primary);
-        }
-
-        .q-map-btn.answered.active {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
-        }
-
-        .quiz-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 20px;
-            position: sticky;
-            top: 0;
-            background: var(--bg-card);
-            z-index: 10;
-        }
-
-        .timer-box {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary);
-            background: var(--bg-body);
-            border: 1px solid var(--border-color);
-            padding: 6px 16px;
-            border-radius: 8px;
-        }
-
-        .question-text {
-            font-size: 1.15rem;
-            line-height: 1.7;
-            margin-bottom: 30px;
-            color: var(--primary);
-            font-weight: 400;
-        }
-
-        .options-container {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 30px;
-        }
-
-        .option-btn {
-            background: var(--white);
-            border: 1px solid var(--border-color);
-            padding: 16px 20px;
-            border-radius: var(--radius-sm);
-            font-size: 1rem;
-            color: var(--text-main);
-            text-align: left;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .option-btn:hover {
-            border-color: var(--primary);
-            background: var(--bg-body);
-        }
-
-        .option-btn.selected {
-            background: var(--primary);
-            border-color: var(--primary);
-            color: var(--white);
-            font-weight: 500;
-        }
-
-        .option-btn.selected .option-label {
-            color: var(--white);
-        }
-
-        .option-label {
-            font-weight: 700;
-            margin-right: 15px;
-            min-width: 20px;
-            color: var(--text-muted);
-        }
-
-        .quiz-nav {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .quiz-nav button {
-            flex: 1;
-            padding: 14px;
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--border-color);
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            font-family: inherit;
-        }
-
-        .btn-prev {
-            background: var(--bg-body);
-            color: var(--text-main);
-        }
-
-        .btn-prev:hover {
-            background: #e5e5e5;
-        }
-
-        .btn-next {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-
-        .btn-next:hover {
-            background: var(--primary-hover);
-        }
-
-        /* Komponen Review & Evaluasi Lengkap */
-        .score-card {
-            text-align: center;
-            background: var(--primary);
-            color: white;
-            padding: 40px 20px;
-            border-radius: var(--radius-md);
-            margin-bottom: 30px;
-            box-shadow: var(--shadow-md);
-        }
-
-        .score-card h2 {
-            font-size: 1.1rem;
-            font-weight: 400;
-            opacity: 0.8;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
-
-        .score-val {
-            font-size: 4.5rem;
-            font-weight: 800;
-            line-height: 1;
-            margin-bottom: 10px;
-            letter-spacing: -2px;
-        }
-
-        .eval-detail-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-
-        .eval-detail-card {
-            background: var(--white);
-            border: 1px solid var(--border-color);
-            padding: 15px;
-            border-radius: var(--radius-sm);
-            text-align: center;
-        }
-
-        .eval-detail-title {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            font-weight: 600;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-
-        .eval-detail-val {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .review-item {
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 20px;
-            margin-bottom: 20px;
-            background: white;
-        }
-
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-        }
-
-        .badge {
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            border: 1px solid;
-        }
-
-        .badge.benar {
-            background: var(--primary);
-            color: var(--white);
-            border-color: var(--primary);
-        }
-
-        .badge.salah {
-            background: var(--white);
-            color: var(--text-muted);
-            border-color: var(--border-color);
-        }
-
-        .badge.warning {
-            background: var(--bg-body);
-            color: var(--primary);
-            border-color: var(--primary);
-        }
-
-        .badge.kosong {
-            background: var(--bg-body);
-            color: var(--text-muted);
-            border-color: transparent;
-        }
-
-        .review-q {
-            font-weight: 400;
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-        }
-
-        .review-ans {
-            background: var(--bg-body);
-            padding: 12px;
-            border-radius: var(--radius-sm);
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            border: 1px solid var(--border-color);
-        }
-
-        .review-ans strong {
-            display: block;
-            margin-bottom: 4px;
-            color: var(--text-muted);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-        }
-
-        .review-expl {
-            border-top: 1px dashed var(--border-color);
-            padding-top: 15px;
-            font-size: 0.95rem;
-            margin-top: 15px;
-        }
-
-        .loading-spinner {
-            border: 3px solid rgba(0, 0, 0, 0.1);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border-left-color: var(--primary);
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        #error-msg {
-            color: var(--danger);
-            font-size: 0.9rem;
-            margin-top: -10px;
-            margin-bottom: 15px;
-            display: none;
-            font-weight: 500;
-        }
-
-        .cat-badge {
-            font-size: 0.75rem;
-            background: var(--primary);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
+        #toast.show { visibility: visible; opacity: 1; transform: translateX(-50%) translateY(0); }
+
+        .input-group { margin-bottom: 20px; width: 100%; }
+        .input-label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; color: var(--text-main); }
+        .input-field { width: 100%; padding: 16px 20px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); font-size: 1rem; font-family: inherit; transition: var(--transition); background: var(--white); }
+        .input-field:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05); }
+
+        .btn { width: 100%; padding: 16px 24px; border-radius: var(--radius-sm); font-size: 1.05rem; font-weight: 600; cursor: pointer; transition: var(--transition); border: none; display: flex; justify-content: center; align-items: center; gap: 10px; font-family: inherit; }
+        .btn-primary { background: var(--primary); color: white; border: 1px solid var(--primary); }
+        .btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .btn-outline { background: var(--white); color: var(--primary); border: 1px solid var(--border-color); }
+        .btn-outline:hover { border-color: var(--primary); background: var(--bg-body); }
+        .btn-danger-outline { background: transparent; color: var(--danger); border: 1px solid var(--danger); }
+        .btn-danger-outline:hover { background: var(--danger); color: #fff; }
+
+        .setup-mix-container { background: var(--white); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 16px; margin-bottom: 20px; }
+        .mix-item { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border-color); }
+        .mix-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .mix-checkbox-label { display: flex; align-items: center; gap: 10px; font-weight: 600; cursor: pointer; }
+        .mix-checkbox { width: 18px; height: 18px; accent-color: var(--primary); cursor: pointer; }
+        .mix-input-group { display: flex; align-items: center; gap: 10px; }
+        .mix-number-input { width: 70px; padding: 8px; border: 1px solid var(--border-color); border-radius: 4px; text-align: center; font-family: inherit; font-weight: 600; }
+        .mix-max-info { font-size: 0.8rem; color: var(--text-muted); width: 60px; text-align: right; }
+
+        .menu-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 20px; }
+        .menu-card { border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 24px; cursor: pointer; transition: var(--transition); display: flex; align-items: center; gap: 20px; background: var(--white); }
+        .menu-card:hover { border-color: var(--primary); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+        .menu-icon { font-size: 2rem; background: var(--bg-body); width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; border-radius: 50%; color: var(--primary); }
+        .menu-text h3 { color: var(--primary); margin-bottom: 4px; font-size: 1.2rem; font-weight: 700; }
+        .menu-text p { color: var(--text-muted); font-size: 0.9rem; font-weight: 300; }
+
+        /* Pengaturan Layout Chat yang Ditingkatkan */
+        .chat-container { flex-grow: 1; display: flex; flex-direction: column; background: #fff; border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; height: 500px; margin-bottom: 20px; position: relative; }
+        .chat-messages { flex-grow: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; background: var(--bg-body); }
+        .chat-bubble { background: #fff; padding: 10px 15px; border-radius: 12px; border: 1px solid var(--border-color); width: 100%; position: relative; }
+        .chat-header { display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 0.75rem; color: var(--text-muted); align-items:center; }
+        .chat-name { font-weight: 700; color: var(--primary); }
+        .chat-text { font-size: 0.95rem; color: var(--text-main); margin-bottom: 8px; word-wrap: break-word; }
+        .chat-action { display: flex; justify-content: flex-end; gap: 8px; }
+        
+        .chat-btn-small { background: none; border: 1px solid var(--border-color); border-radius: 20px; padding: 4px 10px; font-size: 0.75rem; cursor: pointer; display: flex; align-items: center; gap: 5px; color: var(--text-muted); transition: var(--transition); }
+        .chat-btn-small:hover { border-color: var(--primary); color: var(--primary); }
+        .btn-like.liked { background: #ffeaa7; border-color: #fdcb6e; color: #e17055; }
+        
+        /* Fitur Balas/Edit Chat UI */
+        .chat-replied-to { background: #f8f9fa; border-left: 3px solid var(--primary); padding: 6px 10px; border-radius: 4px; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px; }
+        .chat-replied-name { font-weight: 600; color: var(--primary); margin-bottom: 2px; display: block; }
+        #chat-action-banner { display: none; padding: 8px 15px; background: #eef2ff; border-top: 1px solid var(--border-color); align-items: center; justify-content: space-between; font-size: 0.85rem; color: var(--primary); border-bottom: 1px solid var(--border-color); }
+        .chat-edited-mark { font-size: 0.7rem; color: #aaa; font-style: italic; margin-left: 5px; }
+
+        .chat-input-area { display: flex; padding: 10px; background: #fff; gap: 10px; }
+        .chat-input { flex-grow: 1; padding: 10px 15px; border-radius: 20px; border: 1px solid var(--border-color); outline: none; font-family: inherit; }
+        .chat-send { background: var(--primary); color: #fff; border: none; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; cursor: pointer; }
+
+        .materi-section { background: white; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; margin-bottom: 20px; }
+        .materi-title { font-size: 1.2rem; color: var(--primary); margin-bottom: 10px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; font-weight: 700; }
+        .materi-content h4 { color: var(--primary); margin-top: 15px; margin-bottom: 5px; }
+        .materi-content p, .materi-content ul { font-size: 0.95rem; color: var(--text-main); margin-bottom: 10px; }
+        .materi-content ul { padding-left: 20px; }
+        .trick-box { background: var(--bg-body); border-left: 4px solid var(--primary); padding: 12px 16px; border-radius: 4px; margin-top: 10px; font-size: 0.9rem; }
+
+        .q-map-container { background: white; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; margin-top: 20px; }
+        .q-map-title { font-size: 1rem; font-weight: 700; margin-bottom: 15px; text-align: center; }
+        .q-map-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); gap: 8px; }
+        .q-map-btn { width: 100%; aspect-ratio: 1; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-body); font-weight: 600; font-size: 0.9rem; cursor: pointer; color: var(--text-muted); display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+        .q-map-btn.answered { background: var(--primary); color: white; border-color: var(--primary); }
+        .q-map-btn.active { border: 2px solid var(--primary); transform: scale(1.1); font-weight: 700; box-shadow: var(--shadow-sm); background: var(--white); color: var(--primary); }
+        .q-map-btn.answered.active { background: var(--primary); color: white; border-color: var(--primary); outline: 2px solid var(--primary); outline-offset: 2px; }
+
+        .quiz-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; border-bottom: 1px solid var(--border-color); margin-bottom: 20px; position: sticky; top: 0; background: var(--bg-card); z-index: 10; }
+        .timer-box { font-size: 1.2rem; font-weight: 700; color: var(--primary); background: var(--bg-body); border: 1px solid var(--border-color); padding: 6px 16px; border-radius: 8px; }
+        .question-text { font-size: 1.15rem; line-height: 1.7; margin-bottom: 30px; color: var(--primary); font-weight: 400; }
+        .options-container { display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; }
+        .option-btn { background: var(--white); border: 1px solid var(--border-color); padding: 16px 20px; border-radius: var(--radius-sm); font-size: 1rem; color: var(--text-main); text-align: left; cursor: pointer; transition: var(--transition); display: flex; align-items: flex-start; }
+        .option-btn:hover { border-color: var(--primary); background: var(--bg-body); }
+        .option-btn.selected { background: var(--primary); border-color: var(--primary); color: var(--white); font-weight: 500; }
+        .option-btn.selected .option-label { color: var(--white); }
+        .option-label { font-weight: 700; margin-right: 15px; min-width: 20px; color: var(--text-muted); }
+
+        .quiz-nav { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 20px; }
+        .quiz-nav button { flex: 1; padding: 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); font-weight: 600; cursor: pointer; transition: var(--transition); font-family: inherit; }
+        .btn-prev { background: var(--bg-body); color: var(--text-main); }
+        .btn-prev:hover { background: #e5e5e5; }
+        .btn-next { background: var(--primary); color: white; border-color: var(--primary); }
+        .btn-next:hover { background: var(--primary-hover); }
+
+        .score-card { text-align: center; background: var(--primary); color: white; padding: 40px 20px; border-radius: var(--radius-md); margin-bottom: 30px; box-shadow: var(--shadow-md); }
+        .score-card h2 { font-size: 1.1rem; font-weight: 400; opacity: 0.8; margin-bottom: 10px; letter-spacing: 1px; }
+        .score-val { font-size: 4.5rem; font-weight: 800; line-height: 1; margin-bottom: 10px; letter-spacing: -2px; }
+
+        .eval-detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 30px; }
+        .eval-detail-card { background: var(--white); border: 1px solid var(--border-color); padding: 15px; border-radius: var(--radius-sm); text-align: center; }
+        .eval-detail-title { font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-bottom: 5px; }
+        .eval-detail-val { font-size: 1.4rem; font-weight: 700; color: var(--primary); }
+
+        /* Speed Stats Specific Grid */
+        .eval-speed-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 30px; }
+        @media(min-width: 640px) { .eval-speed-grid { grid-template-columns: repeat(3, 1fr); } }
+        .speed-card { background: #fafafa; border: 1px solid #eaeaea; padding: 12px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.02); }
+        .speed-card i { font-size: 1.5rem; margin-bottom: 5px; color: var(--primary); }
+        .speed-val { font-size: 1.1rem; font-weight: 800; color: var(--primary); margin: 4px 0; }
+        .speed-label { font-size: 0.75rem; color: var(--text-muted); font-weight: 500; line-height: 1.2; }
+
+        .review-item { border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; margin-bottom: 20px; background: white; }
+        .review-header { display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: 600; font-size: 0.9rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; }
+        .badge { padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; border: 1px solid; }
+        .badge.benar { background: var(--primary); color: var(--white); border-color: var(--primary); }
+        .badge.salah { background: var(--white); color: var(--text-muted); border-color: var(--border-color); }
+        .badge.warning { background: var(--bg-body); color: var(--primary); border-color: var(--primary); }
+        .badge.kosong { background: var(--bg-body); color: var(--text-muted); border-color: transparent; }
+
+        .review-q { font-weight: 400; margin-bottom: 15px; font-size: 1.05rem; }
+        .review-ans { background: var(--bg-body); padding: 12px; border-radius: var(--radius-sm); font-size: 0.9rem; margin-bottom: 10px; border: 1px solid var(--border-color); }
+        .review-ans strong { display: block; margin-bottom: 4px; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; }
+        .review-expl { border-top: 1px dashed var(--border-color); padding-top: 15px; font-size: 0.95rem; margin-top: 15px; }
+
+        /* Styling Kartu Riwayat Pengerjaan */
+        .history-card { background: white; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; margin-bottom: 15px; transition: var(--transition); }
+        .history-card:hover { border-color: var(--primary); box-shadow: var(--shadow-sm); }
+        .history-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; }
+        .history-date { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; }
+        .history-score { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+        .history-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; font-size: 0.85rem; margin-bottom: 10px; }
+        .history-stat-item { background: var(--bg-body); padding: 8px; border-radius: 6px; }
+
+        /* Animasi Loading Estetik */
+        .aesthetic-loader { position: relative; width: 80px; height: 80px; margin: 0 auto 30px; }
+        .aesthetic-circle-outer { width: 100%; height: 100%; border-radius: 50%; border: 4px solid transparent; border-top-color: var(--primary); border-bottom-color: var(--primary); animation: spin 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite; }
+        .aesthetic-circle-inner { position: absolute; top: 12px; left: 12px; right: 12px; bottom: 12px; border-radius: 50%; border: 4px solid transparent; border-left-color: #888; border-right-color: #888; animation: spin-reverse 1s linear infinite; }
+        .loading-text { font-size: 1rem; font-weight: 700; letter-spacing: 2px; color: var(--primary); text-transform: uppercase; animation: pulse 1.5s ease-in-out infinite; }
+        .loading-subtext { font-size: 0.85rem; color: var(--text-muted); margin-top: 8px; }
+
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes spin-reverse { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
+        @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+
+        #error-msg { color: var(--danger); font-size: 0.9rem; margin-top: -10px; margin-bottom: 15px; display: none; font-weight: 500; }
+        .cat-badge { font-size: 0.75rem; background: var(--primary); color: white; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
     </style>
 </head>
 
@@ -1275,19 +532,21 @@
 
     <div class="container">
 
-        <div id="screen-loading" class="screen active text-center" style="justify-content: center;">
-            <div class="loading-spinner"></div>
-            <h3 class="title">Menghubungkan...</h3>
-            <p class="subtitle">Memuat data dan memeriksa sesi Anda</p>
+        <!-- Layar Loading Estetik -->
+        <div id="screen-loading" class="screen active text-center" style="justify-content: center; background-color: var(--bg-card);">
+            <div class="aesthetic-loader">
+                <div class="aesthetic-circle-outer"></div>
+                <div class="aesthetic-circle-inner"></div>
+            </div>
+            <div class="loading-text">Menyiapkan Ruang Ujian</div>
+            <div class="loading-subtext">Sinkronisasi data & modul cerdas...</div>
         </div>
 
         <div id="screen-login" class="screen">
             <div class="slide-up">
                 <div class="brand-header">
-                    <div
-                        style="font-size: 2.5rem; font-weight: 800; letter-spacing: -2px; line-height: 1; margin-bottom: 5px;">
-                        <span
-                            style="border: 2px solid #000; padding: 0 8px; border-radius: 8px; display: inline-block; margin-right: 5px;">S</span>shafaqo
+                    <div style="font-size: 2.5rem; font-weight: 800; letter-spacing: -2px; line-height: 1; margin-bottom: 5px;">
+                        <span style="border: 2px solid #000; padding: 0 8px; border-radius: 8px; display: inline-block; margin-right: 5px;">S</span>shafaqo
                     </div>
                     <p class="subtitle" style="margin-bottom: 10px; font-size: 0.9rem;">Portal Simulasi CAT Terpadu</p>
                 </div>
@@ -1302,8 +561,7 @@
                 </div>
                 <p id="error-msg">Kode akses tidak valid!</p>
 
-                <button id="btn-login" class="btn btn-primary mb-6" onclick="verifyCode()">Akses Portal
-                    Simulasi</button>
+                <button id="btn-login" class="btn btn-primary mb-6" onclick="verifyCode()">Akses Portal Simulasi</button>
 
                 <div class="dash-grid">
                     <div class="dash-card">
@@ -1320,7 +578,7 @@
                     </div>
                 </div>
 
-                <!-- Leaderboard Top 9 Grid Icon -->
+                <!-- Leaderboard Section -->
                 <div class="leaderboard-section">
                     <div class="lb-header">
                         <div class="lb-title">🏆 Top 9 Nilai Tertinggi</div>
@@ -1330,15 +588,11 @@
                         <input type="text" id="search-lb" class="search-input"
                             placeholder="Cari nama peserta untuk melihat nilai..." oninput="handleSearchLeaderboard()">
                     </div>
-                    <!-- Wadah untuk Grid View -->
                     <div id="leaderboard-grid-view"></div>
-                    <!-- Wadah untuk Kotak Detail ketika Icon diklik -->
                     <div id="leaderboard-detail-view" class="lb-detail-box"></div>
-                    <!-- Wadah untuk List View ketika Search aktif -->
                     <div id="leaderboard-list-view" class="lb-list" style="display:none;"></div>
                 </div>
 
-                <!-- Kotak Premium Info Dikembalikan 100% -->
                 <div id="info-kode-akses" class="premium-box">
                     <h3># Belum Punya Kode Akses?</h3>
                     <div class="step-flow">
@@ -1361,32 +615,26 @@
                         Metode Pembayaran:</p>
                     <div class="pay-grid">
                         <div class="pay-item" onclick="copyText('082273902728', 'DANA')">
-                            <div class="pay-item-left"><span
-                                    style="font-weight: 800; font-size: 1.2rem; letter-spacing: -1px; width: 40px;">DANA</span>
-                                <div><span class="pay-text">0822 7390 2728</span><span class="pay-sub">a.n. Ahmad Ropat
-                                        Tanjung</span></div>
+                            <div class="pay-item-left"><span style="font-weight: 800; font-size: 1.2rem; letter-spacing: -1px; width: 40px;">DANA</span>
+                                <div><span class="pay-text">0822 7390 2728</span><span class="pay-sub">a.n. Ahmad Ropat Tanjung</span></div>
                             </div>
                             <div class="copy-badge">Salin</div>
                         </div>
                         <div class="pay-item" onclick="copyText('082273902728', 'ShopeePay')">
-                            <div class="pay-item-left"><span
-                                    style="font-weight: 800; font-size: 1.1rem; letter-spacing: -0.5px; width: 40px; line-height: 1;">Shopee
-                                    Pay</span>
-                                <div><span class="pay-text">0822 7390 2728</span><span class="pay-sub">a.n. Ahmad Ropat
-                                        Tanjung</span></div>
+                            <div class="pay-item-left"><span style="font-weight: 800; font-size: 1.1rem; letter-spacing: -0.5px; width: 40px; line-height: 1;">Shopee Pay</span>
+                                <div><span class="pay-text">0822 7390 2728</span><span class="pay-sub">a.n. Ahmad Ropat Tanjung</span></div>
                             </div>
                             <div class="copy-badge">Salin</div>
                         </div>
                         <div class="pay-item" onclick="copyText('7207203418', 'BSI')">
-                            <div class="pay-item-left"><span
-                                    style="font-weight: 800; font-size: 1.2rem; letter-spacing: -1px; width: 40px;">BSI</span>
-                                <div><span class="pay-text">7207203418</span><span class="pay-sub">a.n. Ahmad Ropat
-                                        Tanjung</span></div>
+                            <div class="pay-item-left"><span style="font-weight: 800; font-size: 1.2rem; letter-spacing: -1px; width: 40px;">BSI</span>
+                                <div><span class="pay-text">7207203418</span><span class="pay-sub">a.n. Ahmad Ropat Tanjung</span></div>
                             </div>
                             <div class="copy-badge">Salin</div>
                         </div>
                     </div>
-                    <a href="https://wa.me/6282273902728" target="_blank" class="btn btn-wa">Konfirmasi via WhatsApp</a>
+                    <!-- Template WA Diperbarui -->
+                    <a href="https://wa.me/6282273902728?text=Halo%20Admin%2C%20saya%20tertarik%20untuk%20mendapatkan%20Kode%20Akses%20VIP%20Sistem%20Simulasi%20CAT%20Shafaqo.%20Mohon%20panduannya%20untuk%20pembayaran%20dan%20aktivasi.%20Terima%20kasih%20sebelumnya!%20%F0%9F%99%8F" target="_blank" class="btn btn-wa">Konfirmasi via WhatsApp</a>
                 </div>
             </div>
         </div>
@@ -1423,6 +671,27 @@
                             <p>Tanya jawab sesama pejuang CPNS.</p>
                         </div>
                     </div>
+                    <!-- MENU BARU: RIWAYAT PENGERJAAN -->
+                    <div class="menu-card" onclick="masukRiwayatPengerjaan()">
+                        <div class="menu-icon">📈</div>
+                        <div class="menu-text">
+                            <h3>Riwayat Kemajuan</h3>
+                            <p>Pantau rekam jejak simulasi Anda.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCREEN BARU: HISTORY -->
+        <div id="screen-history" class="screen" style="overflow-y: auto;">
+            <div class="slide-up">
+                <button class="btn-outline mb-4" style="padding: 8px 16px; width: auto; font-size: 0.9rem;" onclick="openScreen('screen-menu')">← Kembali</button>
+                <h1 class="title">Riwayat Kemajuan</h1>
+                <p class="subtitle">Rekam jejak seluruh hasil ujian Anda sebelumnya.</p>
+                
+                <div id="history-container">
+                    <!-- Konten list history via JS -->
                 </div>
             </div>
         </div>
@@ -1441,6 +710,13 @@
                 <p class="subtitle" style="margin-bottom: 10px;">Berbagi info, soal, atau sapa teman-teman.</p>
                 <div class="chat-container">
                     <div id="chat-box" class="chat-messages"></div>
+                    
+                    <!-- Banner Info Balas/Edit -->
+                    <div id="chat-action-banner">
+                        <span id="chat-action-text">Membalas...</span>
+                        <button onclick="cancelChatAction()" style="border:none; background:none; cursor:pointer; font-weight:bold; color:var(--primary); font-size:1.1rem;">✖</button>
+                    </div>
+
                     <div class="chat-input-area">
                         <input type="text" id="chat-input-text" class="chat-input" placeholder="Ketik pesan Anda..."
                             onkeypress="if(event.key === 'Enter') sendChat()">
@@ -1456,616 +732,36 @@
                     style="padding: 8px 16px; border-radius: 8px; display: inline-block; width: auto; margin-bottom: 20px; font-size: 0.9rem;"
                     onclick="openScreen('screen-menu')">← Kembali</button>
                 <div class="search-box" style="margin-bottom: 20px;">
-                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="11" cy="11" r="8"></circle>
                         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
-                    <input type="text" id="inputSearchMateri" class="search-input"
-                        placeholder="Cari judul materi di sini..." onkeyup="cariMateri()">
+                    <input type="text" id="inputSearchMateri" class="search-input" placeholder="Cari judul materi di sini..." onkeyup="cariMateri()">
                 </div>
                 <h1 class="title">Modul Cepat : Buku Pintar CPNS</h1>
                 <p class="subtitle">Edisi Master: Super Lengkap + Trik Cepat</p>
-
-                <!-- Materi TKP -->
+                
                 <div class="materi-section">
                     <div class="materi-title"><span>📝 TKP (Karakteristik Pribadi)</span></div>
                     <div class="materi-content">
-                        <div class="main-section">
-                            <div class="main-section-header header-tkp">📝 1. TKP (Tes Karakteristik Pribadi)</div>
-                            <div class="main-section-body">
-                                <p style="margin-top:0;"><strong>Tujuan:</strong> Mencari "Malaikat Berseragam".
-                                    Jawablah sebagai sosok pelayan rakyat yang paling sabar, tegas pada aturan (SOP),
-                                    dan pintar teknologi.</p>
-                                <div class="sub-materi" style="border-left-color: #ec4899;">
-                                    <h3 class="sub-materi-title">A. Pelayanan Publik</h3>
-                                    <div class="blok-belajar">
-                                        <span class="label-blok label-inti">Inti & Tips</span>
-                                        <p class="blok-teks">Pilih aksi yang <strong>langsung menyelesaikan masalah
-                                                warga</strong> tanpa melanggar aturan. Jangan biarkan warga pulang
-                                            dengan tangan kosong jika masih bisa dibantu.</p>
-                                    </div>
-                                    <div class="blok-belajar">
-                                        <span class="label-blok label-contoh">5 Contoh Kasus</span>
-                                        <div class="box-contoh">
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 1</span>
-                                                <div class="soal-teks">Jam istirahat tinggal 5 menit, datang kakek tua
-                                                    dari desa kebingungan mengurus KTP.</div><span
-                                                    class="jawaban-benar">✔ Jawaban (Poin 5): Menunda istirahat sebentar
-                                                    untuk menyapa, memandu, dan menyelesaikan urusan kakek
-                                                    tersebut.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 2</span>
-                                                <div class="soal-teks">Warga marah-marah membentak Anda karena syaratnya
-                                                    kurang sehingga ditolak sistem.</div><span class="jawaban-benar">✔
-                                                    Jawaban (Poin 5): Tetap tenang, tersenyum, mendengarkan keluhannya,
-                                                    lalu menjelaskan pelan-pelan syarat apa yang kurang agar bisa segera
-                                                    dilengkapi.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 3</span>
-                                                <div class="soal-teks">Sahabat dekat Anda datang meminta urusan
-                                                    berkasnya didahulukan tanpa antre.</div><span
-                                                    class="jawaban-benar">✔ Jawaban (Poin 5): Meminta maaf dengan sopan
-                                                    dan menyuruhnya tetap mengambil nomor antrean sesuai aturan
-                                                    (SOP).</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 4</span>
-                                                <div class="soal-teks">Datang warga penyandang disabilitas (pakai kursi
-                                                    roda), sementara loket Anda ada di lantai 2 tanpa lift.</div><span
-                                                    class="jawaban-benar">✔ Jawaban (Poin 5): Anda yang turun ke lantai
-                                                    1 menghampirinya, mengambil berkasnya, dan memprosesnya di
-                                                    atas.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 5</span>
-                                                <div class="soal-teks">Sistem komputer tiba-tiba error saat antrean
-                                                    sedang sangat panjang.</div><span class="jawaban-benar">✔ Jawaban
-                                                    (Poin 5): Meminta maaf kepada warga, melapor ke tim teknisi (IT),
-                                                    dan sementara mencatat data warga secara manual agar pelayanan tidak
-                                                    berhenti total.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sub-materi" style="border-left-color: #ec4899;">
-                                    <h3 class="sub-materi-title">B. TIK & Profesionalisme Kerja</h3>
-                                    <div class="blok-belajar">
-                                        <span class="label-blok label-inti">Inti & Tips</span>
-                                        <p class="blok-teks">Pemerintah butuh orang melek IT. Selalu pilih opsi
-                                            <strong>"Belajar", "Menggunakan aplikasi"</strong>, dan <strong>"Pantang
-                                                menyerah saat banyak kerjaan"</strong>.</p>
-                                    </div>
-                                    <div class="blok-belajar">
-                                        <span class="label-blok label-contoh">5 Contoh Kasus</span>
-                                        <div class="box-contoh">
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 1</span>
-                                                <div class="soal-teks">Kantor pakai aplikasi baru yang rumit. Anda sudah
-                                                    tua dan gaptek.</div><span class="jawaban-benar">✔ Jawaban (Poin 5):
-                                                    Meminta rekan kerja muda mengajari saya langkah demi langkah sampai
-                                                    saya bisa.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 2</span>
-                                                <div class="soal-teks">Sudah jam 16.00 waktunya pulang, bos tiba-tiba
-                                                    memberi tugas mendadak untuk besok pagi.</div><span
-                                                    class="jawaban-benar">✔ Jawaban (Poin 5): Lembur sebentar untuk
-                                                    menyelesaikannya malam ini agar besok pagi langsung siap diserahkan
-                                                    (Menunjukkan komitmen tinggi).</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 3</span>
-                                                <div class="soal-teks">Anda tahu cara membuat laporan dengan Excel yang
-                                                    otomatis dalam 5 menit, tapi teman Anda mengerjakannya manual selama
-                                                    2 hari.</div><span class="jawaban-benar">✔ Jawaban (Poin 5):
-                                                    Berinisiatif mengajarkan rumus Excel tersebut kepada teman Anda agar
-                                                    kerja tim lebih efisien.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 4</span>
-                                                <div class="soal-teks">Kantor mengadakan pelatihan komputer di hari
-                                                    Sabtu (hari libur Anda bersama keluarga).</div><span
-                                                    class="jawaban-benar">✔ Jawaban (Poin 5): Memberi pengertian pada
-                                                    keluarga dan tetap mengikuti pelatihan demi meningkatkan kemampuan
-                                                    kerja.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 5</span>
-                                                <div class="soal-teks">Saat sedang membuat laporan penting, internet
-                                                    kantor mati total.</div><span class="jawaban-benar">✔ Jawaban (Poin
-                                                    5): Menggunakan kuota internet HP pribadi (tethering) agar laporan
-                                                    selesai tepat waktu.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sub-materi" style="border-left-color: #ec4899;">
-                                    <h3 class="sub-materi-title">C. Jejaring Kerja & Sosial Budaya</h3>
-                                    <div class="blok-belajar">
-                                        <span class="label-blok label-inti">Inti & Tips</span>
-                                        <p class="blok-teks">Kerja di kantor itu kerja kelompok. Kuncinya:
-                                            <strong>Toleransi tinggi, suka musyawarah, dan tidak kerja sendiri (Bukan
-                                                Superman).</strong></p>
-                                    </div>
-                                    <div class="blok-belajar">
-                                        <span class="label-blok label-contoh">5 Contoh Kasus</span>
-                                        <div class="box-contoh">
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 1</span>
-                                                <div class="soal-teks">Rekan kerja beda agama butuh libur panjang untuk
-                                                    perayaan agamanya.</div><span class="jawaban-benar">✔ Jawaban (Poin
-                                                    5): Menawarkan diri untuk menggantikan jadwal shift kerjanya
-                                                    sementara.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 2</span>
-                                                <div class="soal-teks">Anda ditempatkan di desa pelosok yang
-                                                    masyarakatnya melarang makan ayam, padahal Anda suka.</div><span
-                                                    class="jawaban-benar">✔ Jawaban (Poin 5): Beradaptasi dan menghargai
-                                                    adat tersebut dengan tidak memasak ayam di desa itu.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 3</span>
-                                                <div class="soal-teks">Rekan satu tim Anda terlihat santai main HP
-                                                    padahal tugas kelompok belum selesai.</div><span
-                                                    class="jawaban-benar">✔ Jawaban (Poin 5): Menegurnya dengan baik dan
-                                                    mengajaknya kembali membagi tugas bersama-sama.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 4</span>
-                                                <div class="soal-teks">Dalam rapat tim, ide cemerlang Anda ditolak
-                                                    mentah-mentah oleh suara terbanyak.</div><span
-                                                    class="jawaban-benar">✔ Jawaban (Poin 5): Menerima keputusan rapat
-                                                    dengan ikhlas dan mendukung penuh ide yang disepakati
-                                                    bersama.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 5</span>
-                                                <div class="soal-teks">Atasan sering marah dan memberikan tugas yang
-                                                    bukan bidang Anda.</div><span class="jawaban-benar">✔ Jawaban (Poin
-                                                    5): Mengajak atasan berdiskusi empat mata dengan sopan mengenai
-                                                    pembagian tugas yang lebih efektif. (Fokus ke komunikasi, bukan
-                                                    memberontak).</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sub-materi" style="border-left-color: #ec4899;">
-                                    <h3 class="sub-materi-title">D. Anti Radikalisme (Materi Baru & Penting!)</h3>
-                                    <div class="blok-belajar">
-                                        <span class="label-blok label-inti">Inti & Tips</span>
-                                        <p class="blok-teks">Anda diuji apakah mudah terpengaruh ajaran sesat/pemecah
-                                            belah. Kuncinya: <strong>Tolak ajakan, nasehati, lalu LAPORKAN ke
-                                                atasan/pihak berwajib.</strong> Jangan main hakim sendiri.</p>
-                                    </div>
-                                    <div class="blok-belajar">
-                                        <span class="label-blok label-contoh">5 Contoh Kasus</span>
-                                        <div class="box-contoh">
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 1</span>
-                                                <div class="soal-teks">Ada grup WhatsApp kantor yang isinya suka
-                                                    menyebar gosip atau hoax memecah belah agama.</div><span
-                                                    class="jawaban-benar">✔ Jawaban (Poin 5): Mengingatkan grup agar
-                                                    tidak sebar hoax, dan jika tidak digubris, saya memilih keluar dari
-                                                    grup tersebut.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 2</span>
-                                                <div class="soal-teks">Teman dekat Anda mulai membagikan pamflet
-                                                    anti-Pancasila dan mengajak rapat tertutup.</div><span
-                                                    class="jawaban-benar">✔ Jawaban (Poin 5): Menolak tegas ajakannya,
-                                                    menasihatinya, dan melaporkan kegiatan tersebut ke pimpinan
-                                                    kantor.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 3</span>
-                                                <div class="soal-teks">Anda ditawari bergabung dengan organisasi yang
-                                                    menjanjikan masuk surga asalkan memusuhi pemerintah.</div><span
-                                                    class="jawaban-benar">✔ Jawaban (Poin 5): Menolak mentah-mentah
-                                                    karena bertentangan dengan nilai Pancasila dan cinta tanah
-                                                    air.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 4</span>
-                                                <div class="soal-teks">Tetangga Anda dicurigai merakit bahan peledak di
-                                                    rumah kosnya.</div><span class="jawaban-benar">✔ Jawaban (Poin 5):
-                                                    Segera melaporkan kecurigaan tersebut kepada RT/RW dan pihak
-                                                    kepolisian setempat secara diam-diam. (Jangan digrebek
-                                                    sendiri!).</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 5</span>
-                                                <div class="soal-teks">Seseorang memaksa Anda untuk tidak hormat bendera
-                                                    saat upacara Senin.</div><span class="jawaban-benar">✔ Jawaban (Poin
-                                                    5): Menolak paksaan tersebut dan tetap melaksanakan upacara dengan
-                                                    khidmat sebagai wujud syukur kemerdekaan.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <p style="margin-top:0;"><strong>Tujuan:</strong> Mencari "Malaikat Berseragam". Jawablah sebagai sosok pelayan rakyat yang paling sabar, tegas pada aturan (SOP), dan pintar teknologi.</p>
+                        <div class="trick-box">
+                            <strong>💡 Inti & Tips:</strong> Pilih aksi yang langsung menyelesaikan masalah warga tanpa melanggar aturan. Jangan biarkan warga pulang dengan tangan kosong jika masih bisa dibantu.
                         </div>
                     </div>
                 </div>
-
-                <!-- Materi TWK -->
-                <div class="materi-section">
-                    <div class="materi-title"><span>🧮 TWK (Wawasan Kebangsaan)</span></div>
-                    <div class="materi-content">
-                        <div class="main-section">
-                            <div class="main-section-header header-twk">🇮🇩 2. TWK (Wawasan Kebangsaan)</div>
-                            <div class="main-section-body">
-                                <p style="margin-top:0;"><strong>Tujuan:</strong> Ujian sikap cinta tanah air. Ingat,
-                                    tidak ada hafalan tahun, murni tebak "cerita" ini masuk kategori apa.</p>
-                                <div class="sub-materi" style="border-left-color: #ef4444;">
-                                    <h3 class="sub-materi-title">A. Pengamalan 5 Sila Pancasila</h3>
-                                    <div class="blok-belajar">
-                                        <span class="label-blok label-inti">Inti & Tips</span>
-                                        <p class="blok-teks">Sila 1 (Agama), Sila 2 (Kemanusiaan/Korban), Sila 3
-                                            (Persatuan/Produk Lokal), Sila 4 (Rapat/Pemilu), Sila 5 (Fasilitas
-                                            Umum/Uang).</p>
-                                    </div>
-                                    <div class="blok-belajar">
-                                        <span class="label-blok label-contoh">5 Contoh Kasus</span>
-                                        <div class="box-contoh">
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 1 (Sila 1)</span>
-                                                <div class="soal-teks">Kantor Anda mengadakan doa bersama lintas agama
-                                                    sebelum memulai proyek besar agar lancar.</div><span
-                                                    class="jawaban-benar">✔ Penerapan: Sila 1 (Ketuhanan). Segala
-                                                    sesuatu dikembalikan pada Tuhan.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 2 (Sila 2)</span>
-                                                <div class="soal-teks">Anda melihat anak kecil dibully oleh temannya
-                                                    lalu Anda membela dan menasihati mereka.</div><span
-                                                    class="jawaban-benar">✔ Penerapan: Sila 2 (Kemanusiaan). Melindungi
-                                                    hak asasi manusia dan derajat orang lain.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 3 (Sila 3)</span>
-                                                <div class="soal-teks">Walaupun punya banyak uang, Pak Budi lebih suka
-                                                    membeli jaket kulit buatan Garut dibanding merk luar negeri.</div>
-                                                <span class="jawaban-benar">✔ Penerapan: Sila 3 (Persatuan). Cinta
-                                                    produk dalam negeri demi kemajuan bangsa.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 4 (Sila 4)</span>
-                                                <div class="soal-teks">Walau jagoan politiknya kalah dalam Pemilu, Pak
-                                                    RT tetap rukun dan menerima hasilnya.</div><span
-                                                    class="jawaban-benar">✔ Penerapan: Sila 4 (Kerakyatan). Berjiwa
-                                                    besar menerima hasil demokrasi/musyawarah.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 5 (Sila 5)</span>
-                                                <div class="soal-teks">Mencoret-coret halte bus atau tidak mau bayar
-                                                    iuran sampah komplek.</div><span class="jawaban-benar">✔
-                                                    Pelanggaran: Sila 5 (Keadilan Sosial). Merusak fasilitas yang
-                                                    dibangun dari uang rakyat.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sub-materi" style="border-left-color: #ef4444;">
-                                    <h3 class="sub-materi-title">B. Cinta Tanah Air (Bela Negara dll)</h3>
-                                    <div class="blok-belajar">
-                                        <span class="label-blok label-inti">Inti & Tips</span>
-                                        <p class="blok-teks">Beda 3 istilah: Nasionalisme (Rasa cinta di hati),
-                                            Patriotisme (Pengorbanan nyawa/harta), Bela Negara (Aksi nyata sesuai
-                                            profesinya).</p>
-                                    </div>
-                                    <div class="blok-belajar">
-                                        <span class="label-blok label-contoh">5 Contoh Kasus</span>
-                                        <div class="box-contoh">
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 1</span>
-                                                <div class="soal-teks">Siswa menangis terharu saat bendera pusaka
-                                                    dikibarkan di Istana.</div><span class="jawaban-benar">✔ Kategori:
-                                                    Nasionalisme. (Berupa perasaan bangga/cinta di dalam hati).</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 2</span>
-                                                <div class="soal-teks">Polisi rela tidak pulang berlebaran demi menjaga
-                                                    pos mudik di jalan tol.</div><span class="jawaban-benar">✔ Kategori:
-                                                    Patriotisme. (Rela berkorban menahan rindu/fisik demi
-                                                    negara).</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 3</span>
-                                                <div class="soal-teks">Guru honorer menyeberangi sungai tiap hari demi
-                                                    mengajar anak-anak di pedalaman Papua.</div><span
-                                                    class="jawaban-benar">✔ Kategori: Bela Negara. (Berjuang untuk
-                                                    bangsa melalui Profesi-nya).</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 4</span>
-                                                <div class="soal-teks">Pengusaha besar selalu membayar pajak miliaran
-                                                    rupiah tepat pada waktunya.</div><span class="jawaban-benar">✔
-                                                    Kategori: Bela Negara / Kesadaran Hukum. (Taat aturan demi bantu
-                                                    keuangan negara).</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 5</span>
-                                                <div class="soal-teks">Petugas Bea Cukai menolak uang suap 100 Juta dari
-                                                    importir ilegal.</div><span class="jawaban-benar">✔ Kategori:
-                                                    Integritas / Bela Negara. (Menjaga kejujuran dan ekonomi
-                                                    bangsa).</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sub-materi" style="border-left-color: #ef4444;">
-                                    <h3 class="sub-materi-title">C. Jalur Cepat UUD 1945 & Sejarah (Materi Baru!)</h3>
-                                    <div class="blok-belajar">
-                                        <span class="label-blok label-inti">Inti & Tips</span>
-                                        <p class="blok-teks">Daripada pusing menghafal 37 Pasal UUD, cukup hafalkan 4
-                                            pasal primadona ini: <br>
-                                            <strong>Pasal 29:</strong> Agama.<br>
-                                            <strong>Pasal 31:</strong> Pendidikan/Sekolah.<br>
-                                            <strong>Pasal 33:</strong> Ekonomi/Pasar/Kekayaan Alam.<br>
-                                            <strong>Pasal 34:</strong> Fakir Miskin/Panti Asuhan.
-                                        </p>
-                                    </div>
-                                    <div class="blok-belajar">
-                                        <span class="label-blok label-contoh">5 Contoh Kasus</span>
-                                        <div class="box-contoh">
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 1</span>
-                                                <div class="soal-teks">Pemerintah menjamin anak dari keluarga tidak
-                                                    mampu tetap bisa bersekolah gratis lewat program KIP. Ini wujud
-                                                    pasal?</div><span class="jawaban-benar">✔ Jawaban: Pasal 31 UUD 1945
-                                                    (Hak mendapat pendidikan).</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 2</span>
-                                                <div class="soal-teks">Polisi menangkap kelompok yang melarang ibadah
-                                                    agama tertentu. Polisi sedang menegakkan pasal?</div><span
-                                                    class="jawaban-benar">✔ Jawaban: Pasal 29 UUD 1945 (Kebebasan
-                                                    memeluk agama).</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 3</span>
-                                                <div class="soal-teks">Tambang emas besar di Papua akhirnya sebagian
-                                                    besar sahamnya dikuasai oleh negara, bukan asing. Wujud pasal?</div>
-                                                <span class="jawaban-benar">✔ Jawaban: Pasal 33 UUD 1945 (Bumi dan air
-                                                    dikuasai negara untuk kemakmuran rakyat).</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 4</span>
-                                                <div class="soal-teks">Pemerintah membangun banyak panti jompo dan panti
-                                                    asuhan. Sesuai amanat pasal?</div><span class="jawaban-benar">✔
-                                                    Jawaban: Pasal 34 UUD 1945 (Fakir miskin dan anak terlantar
-                                                    dipelihara oleh negara).</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 5 (Sejarah
-                                                    Cepat)</span>
-                                                <div class="soal-teks">Siapa yang merumuskan dasar negara dan siapa yang
-                                                    mengesahkannya?</div><span class="jawaban-benar">✔ Jawaban: BPUPKI
-                                                    yang Merumuskan (merancang). PPKI yang Mengesahkan (ketok palu
-                                                    meresmikan).</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Materi TIU -->
-                <div class="materi-section">
-                    <div class="materi-title"><span>📝 TIU (Intelijensi Umum)</span></div>
-                    <div class="materi-content">
-                        <div class="main-section">
-                            <div class="main-section-header header-tiu">🧮 3. TIU (Tes Intelegensia Umum)</div>
-                            <div class="main-section-body">
-                                <p style="margin-top:0;"><strong>Tujuan:</strong> Tes kecepatan akal sehat. Jangan buang
-                                    waktu menghitung dengan cara sekolah, pakailah nalar jalan pintas.</p>
-                                <div class="sub-materi" style="border-left-color: #3b82f6;">
-                                    <h3 class="sub-materi-title">A. Verbal (Logika Kata & Kalimat)</h3>
-                                    <div class="blok-belajar">
-                                        <span class="label-blok label-inti">Inti & Tips</span>
-                                        <p class="blok-teks">Untuk Analogi: <span class="highlight-text">Bikin
-                                                Kalimat</span>. Untuk Silogisme: <span class="highlight-text">Coret Kata
-                                                yang Sama</span>. Hati-hati jebakan kata "Sebagian".</p>
-                                    </div>
-                                    <div class="blok-belajar">
-                                        <span class="label-blok label-contoh">5 Contoh Kasus</span>
-                                        <div class="box-contoh">
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 1 (Analogi)</span>
-                                                <div class="soal-teks">GIGI : KUNYAH = JARI : ...</div><span
-                                                    class="jawaban-benar">✔ Logika: GIGI digunakan untuk KUNYAH, maka
-                                                    JARI digunakan untuk PEGANG.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 2 (Analogi)</span>
-                                                <div class="soal-teks">BENSIN : MOTOR = MAKANAN : ...</div><span
-                                                    class="jawaban-benar">✔ Logika: BENSIN adalah bahan bakar MOTOR,
-                                                    MAKANAN adalah bahan bakar MANUSIA.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 3
-                                                    (Silogisme)</span>
-                                                <div class="soal-teks">1. Semua PNS berseragam. 2. Pak Budi PNS.</div>
-                                                <span class="jawaban-benar">✔ Logika: Coret kata "PNS". Sisa katanya
-                                                    digabung -> Pak Budi berseragam.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 4 (Silogisme
-                                                    Sebagian)</span>
-                                                <div class="soal-teks">1. Semua kucing makan ikan. 2. Sebagian kucing
-                                                    berwarna putih.</div><span class="jawaban-benar">✔ Logika: Ingat
-                                                    hukumnya, kalau ada kata "Sebagian", jawabannya WAJIB sebagian. ->
-                                                    Sebagian yang berwarna putih makan ikan.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 5 (Analitis
-                                                    Urutan)</span>
-                                                <div class="soal-teks">A lebih tinggi dari B. C lebih pendek dari B.
-                                                    Siapa paling tinggi?</div><span class="jawaban-benar">✔ Logika:
-                                                    Urutkan dari atas. A di atas B. B di atas C. Paling tinggi pasti si
-                                                    A.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sub-materi" style="border-left-color: #3b82f6;">
-                                    <h3 class="sub-materi-title">B. Analitis: Posisi Duduk & Jadwal (Materi Baru!)</h3>
-                                    <div class="blok-belajar">
-                                        <span class="label-blok label-inti">Inti & Tips</span>
-                                        <p class="blok-teks">Soal ini bacaannya panjang bikin pusing. <span
-                                                class="highlight-text">Triknya: JANGAN dibayangkan di otak!</span> Wajib
-                                            coret-coret di kertas buram. Buat gambar meja atau garis antrean.</p>
-                                    </div>
-                                    <div class="blok-belajar">
-                                        <span class="label-blok label-contoh">5 Contoh Kasus</span>
-                                        <div class="box-contoh">
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 1 (Meja
-                                                    Bundar)</span>
-                                                <div class="soal-teks">Ada 4 orang (A, B, C, D) duduk melingkar. A
-                                                    berhadapan dengan C. B di kanan A. Siapa di kiri A?</div><span
-                                                    class="jawaban-benar">✔ Logika: Gambar lingkaran! Taruh A di bawah,
-                                                    C di atas. Taruh B di sebelah kanan A. Maka tempat kosong di kiri A
-                                                    pasti diisi si D.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 2 (Antrean
-                                                    Kasir)</span>
-                                                <div class="soal-teks">Budi antre di belakang Ani. Cici antre paling
-                                                    depan. Dodi di antara Ani dan Budi. Urutannya?</div><span
-                                                    class="jawaban-benar">✔ Logika: Tulis di kertas! 1. Cici (Paling
-                                                    depan). 2. Ani. 3. Dodi (Di tengah-tengah). 4. Budi.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 3 (Jadwal Jaga
-                                                    Piket)</span>
-                                                <div class="soal-teks">Senin piket Ani. Budi piket 2 hari setelah Ani.
-                                                    Cici piket sebelum Budi. Kapan Cici piket?</div><span
-                                                    class="jawaban-benar">✔ Logika: Tulis hari! Senin=Ani. Budi=Rabu (2
-                                                    hari setelahnya). Cici sebelum Budi = Selasa.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 4 (Lantai
-                                                    Gedung)</span>
-                                                <div class="soal-teks">Lantai 1 Kantin. Ruang Bos di atas lantai staf.
-                                                    Ruang staf di atas kantin. Urutan dari bawah ke atas?</div><span
-                                                    class="jawaban-benar">✔ Logika: Gambar kotak bertingkat.
-                                                    Bawah=Kantin. Tengah=Staf. Atas=Bos.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 5 (Syarat
-                                                    Mutlak)</span>
-                                                <div class="soal-teks">Jika Rina pakai baju merah, Sinta wajib pakai
-                                                    biru. Hari ini Rina pakai merah. Apa baju Sinta?</div><span
-                                                    class="jawaban-benar">✔ Logika: Aturan mutlak. Karena Rina merah,
-                                                    maka Sinta PASTI pakai biru.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sub-materi" style="border-left-color: #3b82f6;">
-                                    <h3 class="sub-materi-title">C. Hitung Cepat Pecahan (Materi Baru!)</h3>
-                                    <div class="blok-belajar">
-                                        <span class="label-blok label-inti">Inti & Tips</span>
-                                        <p class="blok-teks">Soal ini kelihatan horor karena banyak komanya, padahal ada
-                                            jalan pintasnya. <span class="highlight-text">Hafalkan pecahan cantik
-                                                ini:</span> 33,3% = 1/3, 25% = 1/4, 50% = 1/2.</p>
-                                    </div>
-                                    <div class="blok-belajar">
-                                        <span class="label-blok label-contoh">5 Contoh Kasus</span>
-                                        <div class="box-contoh">
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 1 (Pecahan
-                                                    Cantik)</span>
-                                                <div class="soal-teks">Berapa hasil dari 33,33% x 900 ?</div><span
-                                                    class="jawaban-benar">✔ Logika: Jangan hitung manual! Ubah 33,33%
-                                                    jadi 1/3. Maka 1/3 x 900 = 900 dibagi 3 = 300. Mudah kan?</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 2 (Diskon
-                                                    Harga)</span>
-                                                <div class="soal-teks">Baju harga Rp 100.000 diskon 25%. Berapa potongan
-                                                    harganya?</div><span class="jawaban-benar">✔ Logika: Ubah 25% jadi
-                                                    1/4. Maka 1/4 dari 100.000 = 100.000 dibagi 4 = Rp 25.000.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 3 (Deret Lompat
-                                                    Jauh)</span>
-                                                <div class="soal-teks">Tebak deret: 2, 10, 4, 15, 6, 20, ...</div><span
-                                                    class="jawaban-benar">✔ Logika: Ini deret lompat 1! Perhatikan angka
-                                                    ke 1, 3, 5 (2->4->6 selalu +2). Angka ke 2, 4, 6 (10->15->20 selalu
-                                                    +5). Selanjutnya pasti 6+2 = 8.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 4 (Hitung
-                                                    Jarak)</span>
-                                                <div class="soal-teks">Kecepatan motor 60km/jam. Jalan selama 2 jam.
-                                                    Berapa jaraknya? (Rumus JKW)</div><span class="jawaban-benar">✔
-                                                    Logika: Cari Jarak (J) = K x W. Jawab: 60 x 2 = 120 km.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 5 (Perbandingan
-                                                    Tukang Berbalik)</span>
-                                                <div class="soal-teks">10 Tukang bangun rumah 20 hari. Jika bos minta
-                                                    selesai 10 hari, butuh berapa tukang?</div><span
-                                                    class="jawaban-benar">✔ Logika Cepat: Waktu dipercepat 2x lipat (20
-                                                    ke 10). Maka tukang harus dikali 2x lipat. Jawab: 20 Tukang.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sub-materi" style="border-left-color: #3b82f6;">
-                                    <h3 class="sub-materi-title">D. Figural (Tes Tebak Gambar)</h3>
-                                    <div class="blok-belajar">
-                                        <span class="label-blok label-inti">Inti & Tips</span>
-                                        <p class="blok-teks">Jangan panik lihat gambar ruwet! <span
-                                                class="highlight-text">Pilih 1 titik kecil/warna saja lalu pantau
-                                                pergerakannya.</span></p>
-                                    </div>
-                                    <div class="blok-belajar">
-                                        <span class="label-blok label-contoh">5 Contoh Kasus Logika Gambar</span>
-                                        <div class="box-contoh">
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 1 (Titik
-                                                    Putar)</span>
-                                                <div class="soal-teks">Gambar jam, titik hitam di angka 12, lalu angka
-                                                    3, lalu angka 6. Selanjutnya?</div><span class="jawaban-benar">✔
-                                                    Logika: Titik berputar searah jarum jam sejauh 90 derajat. Jawaban:
-                                                    Titik hitam ada di angka 9.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 2 (Penambahan
-                                                    Objek)</span>
-                                                <div class="soal-teks">Pohon dengan 1 daun, lalu 3 daun, lalu 5 daun.
-                                                    Selanjutnya?</div><span class="jawaban-benar">✔ Logika: Jumlah daun
-                                                    selalu bertambah 2 (angka ganjil). Jawaban: Cari gambar pohon dengan
-                                                    7 daun.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 3 (Perubahan
-                                                    Warna)</span>
-                                                <div class="soal-teks">Kotak putih, lalu hitam, lalu putih lagi.
-                                                    Selanjutnya?</div><span class="jawaban-benar">✔ Logika: Warnanya
-                                                    selang-seling. Jawaban: Kotak hitam.</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 4 (Pencerminan /
-                                                    Kaca)</span>
-                                                <div class="soal-teks">Huruf "d" berubah jadi "b". Maka huruf "p"
-                                                    berubah jadi apa?</div><span class="jawaban-benar">✔ Logika: Gambar
-                                                    dicerminkan (kiri jadi kanan). Jawaban: huruf "q".</span>
-                                            </div>
-                                            <div class="contoh-item"><span class="badge-kasus">Kasus 5 (Gambar Beda
-                                                    Sendiri)</span>
-                                                <div class="soal-teks">Ada 5 opsi gambar: A(Segitiga), B(Kotak), C(Segi
-                                                    Lima), D(Lingkaran), E(Segi Enam). Cari yang beda!</div><span
-                                                    class="jawaban-benar">✔ Logika: Semua punya sudut tajam (garis
-                                                    lurus), kecuali D. Jawaban: D (Lingkaran) karena garisnya
-                                                    melengkung.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="sub-materi" style="border-left-color: var(--primary);">
                     <h3 class="sub-materi-title">Infografis Lengkap</h3>
                     <div class="blok-belajar">
-                        <p class="blok-teks">Gunakan panduan visual di bawah ini untuk memahami ringkasan, seperti
-                            pasal-pasal penting, dan strategi menjawab soal Tes TWK, TIU, TKP, Mengerjakan soal
-                            gambar/figural, dan pembahasan lainnya</p>
+                        <p class="blok-teks">Gunakan panduan visual di bawah ini untuk memahami ringkasan, seperti pasal-pasal penting, dan strategi menjawab.</p>
                         <div style="text-align: center; margin: 20px 0;">
-                            <img src="1.png" alt="Infografis Materi TWK"
-                                style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); transition: transform 0.3s ease; margin-bottom:10px;">
-                            <img src="2.png" alt="Infografis Materi TWK"
-                                style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); transition: transform 0.3s ease; margin-bottom:10px;">
-                            <img src="3.png" alt="Infografis Materi TWK"
-                                style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); transition: transform 0.3s ease; margin-bottom:10px;">
-                            <img src="tiu1.png" alt="Infografis Materi TIU"
-                                style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); transition: transform 0.3s ease; margin-bottom:10px;">
-                            <img src="tiu2.png" alt="Infografis Materi TIU"
-                                style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); transition: transform 0.3s ease; margin-bottom:10px;">
-                            <img src="tiu3.png" alt="Infografis Materi TIU"
-                                style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); transition: transform 0.3s ease; margin-bottom:10px;">
-                            <img src="tiu4.png" alt="Infografis Materi TIU"
-                                style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); transition: transform 0.3s ease; margin-bottom:10px;">
-                            <img src="tiu5.png" alt="Infografis Materi TIU"
-                                style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); transition: transform 0.3s ease; margin-bottom:10px;">
-                            <img src="4.png" alt="Infografis Materi TIU"
-                                style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); transition: transform 0.3s ease; margin-bottom:10px;">
-                            <img src="tiu6.png" alt="Infografis Materi TIU"
-                                style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); transition: transform 0.3s ease; margin-bottom:10px;">
-                            <img src="tiu7.png" alt="Infografis Materi TIU"
-                                style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); transition: transform 0.3s ease; margin-bottom:10px;">
-                            <img src="5.png" alt="Infografis Materi TKP"
-                                style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); transition: transform 0.3s ease; margin-bottom:10px;">
-                            <img src="6.png" alt="Infografis Materi TKP"
-                                style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); transition: transform 0.3s ease; margin-bottom:10px;">
+                            <img src="1.png" alt="Infografis Materi TWK" style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); transition: transform 0.3s ease; margin-bottom:10px;">
+                            <img src="2.png" alt="Infografis Materi TWK" style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); transition: transform 0.3s ease; margin-bottom:10px;">
+                            <img src="3.png" alt="Infografis Materi TWK" style="max-width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); transition: transform 0.3s ease; margin-bottom:10px;">
                         </div>
                     </div>
-                    <div class="trick-box">
-                        <strong>💡 Tips Ahli:</strong> Pahami alur panah dan poin-poin tebal pada gambar di atas. Tidak
-                        harus dihafal, tapi pahami konsep dan studi kasusnya.
-                    </div>
                 </div>
-                <button class="btn btn-primary" onclick="openScreen('screen-setup')">Lanjut Simulasi Ujian Sekarang
-                    🚀</button>
+                <button class="btn btn-primary" onclick="openScreen('screen-setup')">Lanjut Simulasi Ujian Sekarang 🚀</button>
             </div>
         </div>
 
@@ -2080,13 +776,10 @@
                 <div class="input-group">
                     <label class="input-label">Nama Peserta/Pemain</label>
                     <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-                        <button id="btn-name-vip" class="btn btn-primary" style="padding: 8px; font-size: 0.85rem;"
-                            onclick="toggleNameInput('vip')">Gunakan Nama VIP</button>
-                        <button id="btn-name-manual" class="btn btn-outline" style="padding: 8px; font-size: 0.85rem;"
-                            onclick="toggleNameInput('manual')">Ketik Manual</button>
+                        <button id="btn-name-vip" class="btn btn-primary" style="padding: 8px; font-size: 0.85rem;" onclick="toggleNameInput('vip')">Gunakan Nama VIP</button>
+                        <button id="btn-name-manual" class="btn btn-outline" style="padding: 8px; font-size: 0.85rem;" onclick="toggleNameInput('manual')">Ketik Manual</button>
                     </div>
-                    <input type="text" id="username-input" class="input-field"
-                        placeholder="Masukkan nama atau alias Anda" disabled>
+                    <input type="text" id="username-input" class="input-field" placeholder="Masukkan nama atau alias Anda" disabled>
                 </div>
 
                 <div class="input-group">
@@ -2101,34 +794,26 @@
         <div id="screen-quiz" class="screen">
             <div class="quiz-header fade-in">
                 <div>
-                    <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; letter-spacing: 1px;">
-                        KATEGORI</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; letter-spacing: 1px;">KATEGORI</div>
                     <div id="quiz-badge-kategori" class="cat-badge">TIU</div>
                 </div>
                 <div class="text-right">
-                    <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; letter-spacing: 1px;">
-                        SISA WAKTU</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; letter-spacing: 1px;">SISA WAKTU</div>
                     <div id="timer" class="timer-box">00:00</div>
                 </div>
             </div>
 
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                 <h3 class="title" id="soal-counter" style="margin: 0; font-size: 1.5rem;">Soal 1/10</h3>
-                <!-- Tombol Map Soal yang Dikembalikan -->
-                <button class="btn-outline"
-                    style="padding: 6px 12px; font-size: 0.85rem; width: auto; border-radius: 6px;"
-                    onclick="toggleMap()">Peta Soal</button>
+                <button class="btn-outline" style="padding: 6px 12px; font-size: 0.85rem; width: auto; border-radius: 6px;" onclick="toggleMap()">Peta Soal</button>
             </div>
 
-            <!-- Kontainer Peta Navigasi Soal -->
             <div id="question-map" class="q-map-container" style="display: none;">
                 <div class="q-map-title">Navigasi Peta Soal</div>
                 <div id="map-grid" class="q-map-grid"></div>
-                <button class="btn btn-primary mt-6" style="padding: 12px;" onclick="submitUjian()">Selesai & Kumpulkan
-                    Jawaban</button>
+                <button class="btn btn-primary mt-6" style="padding: 12px;" onclick="submitUjian()">Selesai & Kumpulkan Jawaban</button>
             </div>
 
-            <!-- Kontainer Isi Soal & Pilihan -->
             <div id="quiz-body" class="slide-up">
                 <div id="question-text" class="question-text"></div>
                 <div id="options-container" class="options-container"></div>
@@ -2147,19 +832,17 @@
                 <div class="score-card">
                     <h2>TOTAL SKOR AKHIR</h2>
                     <div class="score-val" id="eval-score">0</div>
-                    <div style="font-size: 0.95rem; opacity: 0.8; font-weight: 300;">Diselesaikan dalam <span
-                            id="eval-time" style="font-weight: 600;">0</span></div>
+                    <div style="font-size: 0.95rem; opacity: 0.8; font-weight: 300;">Diselesaikan dalam <span id="eval-time" style="font-weight: 600;">0</span></div>
                 </div>
 
                 <h3 class="title" style="font-size: 1.2rem; margin-bottom: 15px;">Detail Per Kategori</h3>
-                <div class="eval-detail-grid" id="eval-kategori-grid">
-                    <!-- Detail skor kategori diisi JS -->
-                </div>
+                <div class="eval-detail-grid" id="eval-kategori-grid"></div>
+
+                <h3 class="title" style="font-size: 1.2rem; margin-top: 30px; margin-bottom: 15px;">Statistik Kecepatan Menjawab</h3>
+                <div class="eval-speed-grid" id="eval-speed-grid"></div>
 
                 <h3 class="title" style="font-size: 1.2rem; margin-top: 30px; margin-bottom: 15px;">Pembahasan Soal</h3>
-                <div id="review-container">
-                    <!-- Detail Setiap Soal (Benar/Salah dan Penjelasan) diisi JS -->
-                </div>
+                <div id="review-container"></div>
 
                 <button class="btn btn-primary mt-6" onclick="location.reload()">Selesai & Kembali ke Utama</button>
             </div>
@@ -2167,17 +850,25 @@
 
     </div>
 
-    <!-- Toast Notifikasi -->
     <div id="toast">Notifikasi</div>
 
     <script>
-        // PERBAIKAN: Pastikan URL ini adalah URL deploy terbaru dari backend.gs
         const APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzuWMkRkZTz85A5LZEa_9l_PgVBdY1S5nPs8iLEoC46lt1kX6rJPx7J9QIftnoowLMl/exec";
 
         let DB = { pengaturan: {}, soal: [], kodeAkses: [], dashboard: {}, kategoriUnik: [], leaderboardData: [] };
         let currentUser = { kode: "", namaVIP: "Peserta" };
-        let quizSession = { playerName: "", kategoriDipilih: "", soalAktif: [], jawabanUser: [], currentIndex: 0, waktuTotal: 0, waktuSisa: 0, endTime: 0, timerInterval: null };
-        const screens = ['screen-loading', 'screen-login', 'screen-menu', 'screen-materi', 'screen-setup', 'screen-chat', 'screen-quiz', 'screen-eval'];
+        
+        let quizSession = { 
+            playerName: "", kategoriDipilih: "", soalAktif: [], jawabanUser: [], 
+            currentIndex: 0, waktuTotal: 0, waktuSisa: 0, endTime: 0, timerInterval: null,
+            waktuPerSoal: [], waktuMulaiSoal: 0 
+        };
+        
+        // State Forum Chat
+        let replyingTo = null;
+        let editingChatId = null;
+
+        const screens = ['screen-loading', 'screen-login', 'screen-menu', 'screen-history', 'screen-materi', 'screen-setup', 'screen-chat', 'screen-quiz', 'screen-eval'];
 
         function openScreen(screenId) {
             screens.forEach(s => document.getElementById(s).classList.remove('active'));
@@ -2191,14 +882,31 @@
             setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
         }
 
-        function getDeviceType() {
+        function getDetailedDeviceInfo() {
             const ua = navigator.userAgent;
-            if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) return "Tablet";
-            if (/Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) return "Mobile";
-            return "Desktop";
+            let browser = "Browser Unknown";
+            if (ua.indexOf("Firefox") > -1) browser = "Firefox";
+            else if (ua.indexOf("SamsungBrowser") > -1) browser = "Samsung Internet";
+            else if (ua.indexOf("Opera") > -1 || ua.indexOf("OPR") > -1) browser = "Opera";
+            else if (ua.indexOf("Trident") > -1) browser = "Internet Explorer";
+            else if (ua.indexOf("Edge") > -1 || ua.indexOf("Edg") > -1) browser = "Edge";
+            else if (ua.indexOf("Chrome") > -1) browser = "Chrome";
+            else if (ua.indexOf("Safari") > -1) browser = "Safari";
+
+            let os = "OS Unknown";
+            if (ua.indexOf("Win") > -1) os = "Windows";
+            else if (ua.indexOf("Mac") > -1) os = "MacOS";
+            else if (ua.indexOf("Android") > -1) os = "Android";
+            else if (ua.indexOf("iPhone") > -1 || ua.indexOf("iPad") > -1) os = "iOS";
+            else if (ua.indexOf("Linux") > -1) os = "Linux";
+
+            let type = "Desktop";
+            if (/Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) type = "Mobile";
+            if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) type = "Tablet";
+
+            return `${browser} di ${os} (${type})`;
         }
 
-        // FITUR KEMBALI: Salin Teks ke Clipboard
         function copyText(textToCopy, method) {
             const tempInput = document.createElement("input");
             tempInput.value = textToCopy;
@@ -2212,7 +920,6 @@
             document.body.removeChild(tempInput);
         }
 
-        // FITUR KEMBALI: Cari Materi (Menyembunyikan/Menampilkan blok materi sesuai kata kunci)
         function cariMateri() {
             let input = document.getElementById('inputSearchMateri').value.toLowerCase();
             let daftarMateri = document.getElementsByClassName('materi-section');
@@ -2223,12 +930,11 @@
             }
         }
 
-        // FITUR BARU: Memulihkan sesi pengguna agar tidak harus login & ujian ulang ketika di refresh
         function checkSessionAndResume() {
             const savedUser = localStorage.getItem('shafaqo_user');
             if (savedUser) {
                 let parsedUser = JSON.parse(savedUser);
-                let validCode = DB.kodeAkses.find(k => k.kode === parsedUser.kode); // Verifikasi silang dengan database
+                let validCode = DB.kodeAkses.find(k => k.kode === parsedUser.kode);
                 if (validCode) {
                     currentUser = parsedUser;
                     document.getElementById('lbl-user-menu').textContent = currentUser.namaVIP;
@@ -2237,17 +943,17 @@
                     const savedQuiz = localStorage.getItem('shafaqo_quiz');
                     if (savedQuiz) {
                         let parsedQuiz = JSON.parse(savedQuiz);
-                        // Cek apakah waktu endTime (waktu habis) di memori masih lebih besar dari waktu sekarang
                         if (parsedQuiz.endTime && parsedQuiz.endTime > Date.now()) {
                             quizSession = parsedQuiz;
-                            renderQuestionMap(); // Render ulang peta dengan warna yang sudah dijawab
-                            loadQuestion(quizSession.currentIndex); // Kembali ke soal terakhir
-                            startTimerUI(); // Menyalakan timer kembali
+                            quizSession.waktuMulaiSoal = Date.now();
+                            renderQuestionMap(); 
+                            loadQuestion(quizSession.currentIndex);
+                            startTimerUI();
                             openScreen('screen-quiz');
                             showToast("Memulihkan sesi ujian Anda...");
                             return;
                         } else {
-                            localStorage.removeItem('shafaqo_quiz'); // Hapus jika sudah telat/habis waktu
+                            localStorage.removeItem('shafaqo_quiz'); 
                         }
                     }
 
@@ -2284,7 +990,7 @@
 
                     renderLeaderboard(DB.leaderboardData, false);
                     renderSetupMix();
-                    checkSessionAndResume(); // Panggil fungsi auto-resume
+                    checkSessionAndResume(); 
                 } else throw new Error(data.message);
             } catch (error) {
                 document.getElementById('screen-loading').innerHTML = `<div class="text-center" style="color:var(--danger)">Gagal Terhubung Server<br>${error.message}</div>`;
@@ -2299,7 +1005,6 @@
             let foundCode = DB.kodeAkses.find(k => k.kode === input);
             if (!foundCode) { err.textContent = 'Kode akses tidak valid!'; err.style.display = 'block'; return; }
 
-            // FITUR BARU: Limit Penggunaan
             if (foundCode.batas !== 'unlimited' && !isNaN(foundCode.batas)) {
                 if (foundCode.penggunaan >= Number(foundCode.batas)) {
                     err.textContent = `Kode akses telah mencapai batas penggunaan maksimal (${foundCode.batas} kali)!`;
@@ -2314,14 +1019,12 @@
             document.getElementById('lbl-user-menu').textContent = currentUser.namaVIP;
             toggleNameInput('vip');
 
-            // Simpan jejak user ke local storage
             localStorage.setItem('shafaqo_user', JSON.stringify(currentUser));
 
-            // PERBAIKAN: Penanganan headers CORS pada fetch POST verifyCode
             fetch(APP_SCRIPT_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-                body: JSON.stringify({ action: 'verifyCode', kode: input, device: getDeviceType() })
+                body: JSON.stringify({ action: 'verifyCode', kode: input, device: getDetailedDeviceInfo() })
             }).catch(e => console.log(e));
 
             btn.textContent = "Akses Portal Simulasi"; btn.disabled = false;
@@ -2341,7 +1044,9 @@
             }
         }
 
+        // ================= FITUR CHAT FORUM =================
         function masukForumChat() { openScreen('screen-chat'); loadChat(); }
+        
         async function loadChat() {
             const box = document.getElementById('chat-box');
             box.innerHTML = `<div class="text-center" style="font-size:0.9rem; color:#666;">Memuat pesan...</div>`;
@@ -2351,14 +1056,60 @@
                 if (data.status === 'success') {
                     box.innerHTML = "";
                     if (data.chats.length === 0) box.innerHTML = `<div class="text-center" style="font-size:0.9rem; color:#666;">Belum ada diskusi. Mulailah menyapa!</div>`;
+                    
                     data.chats.forEach(c => {
                         let dateObj = new Date(c.waktu);
                         let timeStr = dateObj.getHours().toString().padStart(2, '0') + ":" + dateObj.getMinutes().toString().padStart(2, '0');
-                        box.innerHTML += `<div class="chat-bubble"><div class="chat-header"><span class="chat-name">${c.nama}</span><span>${timeStr}</span></div><div class="chat-text">${c.pesan}</div><div class="chat-action"><button class="btn-like" onclick="likeChat('${c.id}', this)">❤️ <span class="like-count">${c.likes}</span></button></div></div>`;
+                        
+                        let replyHTML = "";
+                        if (c.replyTo) {
+                            replyHTML = `<div class="chat-replied-to"><span class="chat-replied-name">↪ Membalas ${c.replyTo.nama}</span>${c.replyTo.pesan.substring(0, 50)}${c.replyTo.pesan.length > 50 ? '...' : ''}</div>`;
+                        }
+                        
+                        let editMarker = c.isEdited ? `<span class="chat-edited-mark">(diedit)</span>` : "";
+                        let isMyChat = c.nama === currentUser.namaVIP;
+                        
+                        let actionBtns = `<button class="chat-btn-small" onclick="prepReply('${c.id}', '${c.nama}', '${c.pesan.replace(/'/g, "\\'")}')">Balas</button>`;
+                        if (isMyChat) {
+                            actionBtns += `<button class="chat-btn-small" onclick="prepEdit('${c.id}', '${c.pesan.replace(/'/g, "\\'")}')">Edit</button>`;
+                        }
+                        actionBtns += `<button class="btn-like" onclick="likeChat('${c.id}', this)">❤️ <span class="like-count">${c.likes}</span></button>`;
+
+                        box.innerHTML += `
+                        <div class="chat-bubble">
+                            <div class="chat-header"><span class="chat-name">${c.nama}</span><span>${timeStr}</span></div>
+                            ${replyHTML}
+                            <div class="chat-text">${c.pesan} ${editMarker}</div>
+                            <div class="chat-action">${actionBtns}</div>
+                        </div>`;
                     });
                     box.scrollTop = box.scrollHeight;
                 }
             } catch (e) { box.innerHTML = `<div class="text-center" style="color:var(--danger);">Gagal memuat chat.</div>`; }
+        }
+
+        function prepReply(id, nama, pesan) {
+            replyingTo = { id: id, nama: nama, pesan: pesan };
+            editingChatId = null;
+            document.getElementById('chat-action-banner').style.display = 'flex';
+            document.getElementById('chat-action-text').innerHTML = `<strong>Membalas ${nama}:</strong> ${pesan.substring(0,25)}...`;
+            document.getElementById('chat-input-text').focus();
+        }
+
+        function prepEdit(id, pesan) {
+            editingChatId = id;
+            replyingTo = null;
+            document.getElementById('chat-action-banner').style.display = 'flex';
+            document.getElementById('chat-action-text').innerHTML = `<strong>Mengedit Pesan Anda</strong>`;
+            document.getElementById('chat-input-text').value = pesan;
+            document.getElementById('chat-input-text').focus();
+        }
+
+        function cancelChatAction() {
+            replyingTo = null;
+            editingChatId = null;
+            document.getElementById('chat-action-banner').style.display = 'none';
+            document.getElementById('chat-input-text').value = "";
         }
 
         async function sendChat() {
@@ -2366,18 +1117,31 @@
             const pesan = input.value.trim();
             if (!pesan) return;
             input.value = "";
+            cancelChatAction(); // sembunyikan banner
+            
             const box = document.getElementById('chat-box');
-            box.innerHTML += `<div class="chat-bubble" style="opacity:0.7;"><div class="chat-header"><span class="chat-name">${currentUser.namaVIP}</span><span>Baru saja</span></div><div class="chat-text">${pesan}</div></div>`;
+            box.innerHTML += `<div class="chat-bubble" style="opacity:0.7;"><div class="chat-header"><span class="chat-name">${currentUser.namaVIP}</span><span>Mengirim...</span></div><div class="chat-text">${pesan}</div></div>`;
             box.scrollTop = box.scrollHeight;
+            
+            let payload = { action: 'sendChat', nama: currentUser.namaVIP, pesan: pesan };
+            
+            if (editingChatId) {
+                payload.action = 'editChat';
+                payload.id = editingChatId;
+            } else if (replyingTo) {
+                payload.replyTo = replyingTo;
+            }
+
+            editingChatId = null; replyingTo = null;
+
             try {
-                // PERBAIKAN: Penanganan headers CORS pada fetch POST sendChat
                 await fetch(APP_SCRIPT_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-                    body: JSON.stringify({ action: 'sendChat', nama: currentUser.namaVIP, pesan: pesan })
+                    body: JSON.stringify(payload)
                 });
                 loadChat();
-            } catch (e) { showToast("Gagal mengirim pesan."); }
+            } catch (e) { showToast("Gagal mengirim/mengedit pesan."); }
         }
 
         function likeChat(id, btnElement) {
@@ -2385,7 +1149,6 @@
             btnElement.classList.add('liked');
             let countSpan = btnElement.querySelector('.like-count');
             countSpan.textContent = parseInt(countSpan.textContent) + 1;
-            // PERBAIKAN: Penanganan headers CORS pada fetch POST likeChat
             fetch(APP_SCRIPT_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'text/plain;charset=utf-8' },
@@ -2393,15 +1156,94 @@
             });
         }
 
-        // FITUR BARU: Top 9 Icon Grid Logic
+        // ================= FITUR HISTORY =================
+        function masukRiwayatPengerjaan() {
+            openScreen('screen-history');
+            const container = document.getElementById('history-container');
+            
+            // Filter data leaderboard berdasarkan namaVIP saat ini
+            let historyData = DB.leaderboardData.filter(x => x.username === currentUser.namaVIP);
+            
+            if(historyData.length === 0) {
+                container.innerHTML = `<div class="text-center" style="margin-top:40px; color:var(--text-muted);">Belum ada riwayat simulasi. Ayo mulai ujian pertamamu!</div>`;
+                return;
+            }
+
+            // Urutkan dari yang terbaru
+            historyData.sort((a,b) => new Date(b.tanggal) - new Date(a.tanggal));
+
+            let htmlStr = "";
+            historyData.forEach((item, index) => {
+                let dateStr = new Date(item.tanggal).toLocaleString('id-ID', {day:'numeric', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit'});
+                let durasiStr = Math.floor(item.waktu / 60) + "m " + (item.waktu % 60) + "s";
+                
+                let statsSpeedStr = "Belum Ada Data";
+                if(item.statistikKecepatan && item.statistikKecepatan.avgAll) {
+                    statsSpeedStr = `${item.statistikKecepatan.avgAll} detik/soal`;
+                }
+
+                htmlStr += `
+                <div class="history-card">
+                    <div class="history-top">
+                        <span class="history-date">${dateStr}</span>
+                        <span class="cat-badge">${item.kategori}</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+                        <div>
+                            <div style="font-size:0.8rem; color:var(--text-muted); font-weight:600; text-transform:uppercase;">Skor Akhir</div>
+                            <div class="history-score">${item.score}</div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div style="font-size:0.8rem; color:var(--text-muted); font-weight:600; text-transform:uppercase;">Waktu Pengerjaan</div>
+                            <div style="font-size:1.2rem; font-weight:700; color:var(--text-main);">${durasiStr}</div>
+                        </div>
+                    </div>
+                    <div class="history-stats">
+                        <div class="history-stat-item"><strong>Kecepatan Rata-rata:</strong><br>${statsSpeedStr}</div>
+                        <div class="history-stat-item"><strong>Total Soal:</strong><br>${item.totalSoal} Soal</div>
+                    </div>
+                </div>`;
+            });
+
+            container.innerHTML = htmlStr;
+        }
+
+        // ================= LEADERBOARD =================
         let currentTop9Data = [];
+        
+        // Fungsi helper untuk merender blok statistik kecepatan ke HTML
+        function generateSpeedGridHTML(statsObj) {
+            if(!statsObj || !statsObj.avgAll) return "";
+            return `
+            <div style="margin-top:15px; border-top:1px dashed var(--border-color); padding-top:10px;">
+                <div style="font-size:0.8rem; font-weight:700; color:var(--primary); margin-bottom:8px;">🚀 DETAIL KECEPATAN:</div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+                    <div class="lb-kat-item" style="text-align:center;">
+                        <span style="font-size:0.7rem; color:var(--text-muted); display:block;">Rata-rata Menjawab</span>
+                        <strong style="color:var(--primary);">${statsObj.avgAll}s</strong>
+                    </div>
+                    <div class="lb-kat-item" style="text-align:center;">
+                        <span style="font-size:0.7rem; color:var(--text-muted); display:block;">Rata-rata (Soal Benar)</span>
+                        <strong style="color:var(--primary);">${statsObj.avgCorrect}s</strong>
+                    </div>
+                    <div class="lb-kat-item" style="text-align:center;">
+                        <span style="font-size:0.7rem; color:var(--text-muted); display:block;">Tercepat (Soal Benar)</span>
+                        <strong style="color:var(--primary);">${statsObj.fastestCorrect}s</strong>
+                    </div>
+                    <div class="lb-kat-item" style="text-align:center;">
+                        <span style="font-size:0.7rem; color:var(--text-muted); display:block;">Terlama Menjawab</span>
+                        <strong style="color:var(--primary);">${statsObj.slowestAll}s</strong>
+                    </div>
+                </div>
+            </div>`;
+        }
+
         function renderLeaderboard(dataList, isSearchActive) {
             const gridView = document.getElementById('leaderboard-grid-view');
             const detailView = document.getElementById('leaderboard-detail-view');
             const listView = document.getElementById('leaderboard-list-view');
 
             if (isSearchActive) {
-                // Tampilan List (Jika sedang Mencari)
                 gridView.style.display = 'none'; detailView.style.display = 'none'; listView.style.display = 'flex';
                 listView.innerHTML = "";
                 if (dataList.length === 0) { listView.innerHTML = `<div class="text-center" style="font-size:0.9rem; color:#666; padding:20px;">Data tidak ditemukan.</div>`; return; }
@@ -2412,10 +1254,25 @@
                     if (user.detailKategori && Object.keys(user.detailKategori).length > 0) {
                         for (const [kat, data] of Object.entries(user.detailKategori)) { katHTML += `<div class="lb-kat-item"><strong>${kat}</strong>: ${data.skor} Poin</div>`; }
                     }
-                    listView.innerHTML += `<div class="lb-card rank-${user.rank}"><div class="lb-top-row"><div style="display:flex; align-items:center; gap:8px; overflow:hidden;"><span class="lb-rank">#${user.rank}</span><span class="lb-name">${user.username}</span></div><div class="lb-score">${user.score}</div></div><div class="lb-detail-row"><span>${durasiStr}</span> | <span>${user.totalSoal || '-'} Soal</span> | <span>Mode: ${user.kategori}</span></div><div class="lb-kat-wrapper">${katHTML}</div></div>`;
+                    
+                    let speedHTML = generateSpeedGridHTML(user.statistikKecepatan);
+
+                    listView.innerHTML += `
+                    <div class="lb-card rank-${user.rank}">
+                        <div class="lb-top-row">
+                            <div style="display:flex; align-items:center; gap:8px; overflow:hidden;">
+                                <span class="lb-rank">#${user.rank}</span><span class="lb-name">${user.username}</span>
+                            </div>
+                            <div class="lb-score">${user.score}</div>
+                        </div>
+                        <div class="lb-detail-row">
+                            <span>${durasiStr}</span> | <span>${user.totalSoal || '-'} Soal</span> | <span>Mode: ${user.kategori}</span>
+                        </div>
+                        <div class="lb-kat-wrapper">${katHTML}</div>
+                        ${speedHTML}
+                    </div>`;
                 });
             } else {
-                // Tampilan Grid Ikon (Jika Default)
                 gridView.style.display = 'flex'; listView.style.display = 'none';
                 currentTop9Data = dataList.slice(0, 9);
 
@@ -2427,17 +1284,14 @@
                 htmlGrid += `</div>`;
                 gridView.innerHTML = htmlGrid;
 
-                // Menampilkan detail juara 1 secara default
                 if (currentTop9Data.length > 0) showLeaderboardDetail(0);
             }
         }
 
-        // Memunculkan kotak detail peserta dibawah ikon yang diklik
         function showLeaderboardDetail(index) {
             const user = currentTop9Data[index];
             if (!user) return;
 
-            // Reset efek sorotan pada ikon
             const btns = document.getElementsByClassName('lb-icon-btn');
             for (let i = 0; i < btns.length; i++) { btns[i].classList.remove('active'); }
             document.getElementById(`lb-btn-${index}`).classList.add('active');
@@ -2447,6 +1301,8 @@
             if (user.detailKategori && Object.keys(user.detailKategori).length > 0) {
                 for (const [kat, data] of Object.entries(user.detailKategori)) { katHTML += `<div class="lb-kat-item"><strong>${kat}</strong>: ${data.skor} Poin</div>`; }
             }
+            
+            let speedStatsHTML = generateSpeedGridHTML(user.statistikKecepatan);
 
             const detailBox = document.getElementById('leaderboard-detail-view');
             detailBox.innerHTML = `
@@ -2461,6 +1317,7 @@
                     <span>⏱️ ${durasiStr}</span> | <span>📝 ${user.totalSoal || '-'} Soal</span> | <span>🏷️ ${user.kategori}</span>
                 </div>
                 <div class="lb-kat-wrapper" style="flex-wrap:wrap;">${katHTML}</div>
+                ${speedStatsHTML}
             `;
             detailBox.classList.add('show');
         }
@@ -2486,6 +1343,13 @@
             return array;
         }
 
+        function catatWaktuSoal() {
+            if (quizSession.waktuMulaiSoal && quizSession.waktuMulaiSoal > 0) {
+                let elapsed = (Date.now() - quizSession.waktuMulaiSoal) / 1000;
+                quizSession.waktuPerSoal[quizSession.currentIndex] = (quizSession.waktuPerSoal[quizSession.currentIndex] || 0) + elapsed;
+            }
+        }
+
         function startSimulasi() {
             const nama = document.getElementById('username-input').value.trim();
             if (!nama) { showToast("Nama tidak boleh kosong!"); return; }
@@ -2509,13 +1373,13 @@
             quizSession.playerName = nama;
             quizSession.kategoriDipilih = kategoriNamaArr.length === DB.kategoriUnik.length ? "MIX" : kategoriNamaArr.join(", ");
             quizSession.jawabanUser = new Array(quizSession.soalAktif.length).fill(null);
+            
+            quizSession.waktuPerSoal = new Array(quizSession.soalAktif.length).fill(0);
+            
             quizSession.currentIndex = 0;
             quizSession.waktuTotal = quizSession.soalAktif.length * (parseInt(DB.pengaturan.waktuPerSoal) || 54);
-
-            // Atur waktu absolut selesainya ujian agar tetap valid meski di-refresh
             quizSession.endTime = Date.now() + (quizSession.waktuTotal * 1000);
-            localStorage.setItem('shafaqo_quiz', JSON.stringify(quizSession));
-
+            
             renderQuestionMap();
             loadQuestion(0);
             startTimerUI();
@@ -2529,7 +1393,6 @@
             timerEl.style.color = "var(--primary)";
 
             quizSession.timerInterval = setInterval(() => {
-                // Selalu hitung ulang dari waktu saat ini vs End Time
                 quizSession.waktuSisa = Math.floor((quizSession.endTime - Date.now()) / 1000);
                 if (quizSession.waktuSisa < 0) quizSession.waktuSisa = 0;
 
@@ -2539,7 +1402,6 @@
             }, 1000);
         }
 
-        // FITUR KEMBALI: Toggle Map Peta Navigasi Soal
         function toggleMap() {
             const map = document.getElementById('question-map');
             const body = document.getElementById('quiz-body');
@@ -2559,15 +1421,16 @@
                 if (quizSession.jawabanUser[i] !== null) btnMap.classList.add('answered');
                 if (i === quizSession.currentIndex) btnMap.classList.add('active');
                 btnMap.textContent = i + 1;
-                btnMap.onclick = () => { loadQuestion(i); toggleMap(); }; // Jika diklik, buka soalnya & tutup map
+                btnMap.onclick = () => { loadQuestion(i); toggleMap(); }; 
                 mapGrid.appendChild(btnMap);
             }
         }
 
         function loadQuestion(index) {
+            catatWaktuSoal();
             quizSession.currentIndex = index;
             const soalData = quizSession.soalAktif[index];
-
+            quizSession.waktuMulaiSoal = Date.now();
             localStorage.setItem('shafaqo_quiz', JSON.stringify(quizSession));
 
             document.getElementById('soal-counter').textContent = `Soal ${index + 1} / ${quizSession.soalAktif.length}`;
@@ -2597,7 +1460,6 @@
 
         function navQuestion(dir) {
             if (dir === 1 && quizSession.currentIndex === quizSession.soalAktif.length - 1) {
-                // Mengecek apakah masih ada soal yang kosong
                 let blmDijawab = quizSession.jawabanUser.filter(x => x === null).length;
                 let msg = blmDijawab > 0 ? `Ada ${blmDijawab} soal yang belum dijawab. Yakin kumpulkan jawaban?` : `Yakin ingin mengumpulkan jawaban sekarang?`;
                 if (confirm(msg)) submitUjian();
@@ -2608,6 +1470,8 @@
         }
 
         async function submitUjian() {
+            catatWaktuSoal();
+            
             clearInterval(quizSession.timerInterval);
             localStorage.removeItem('shafaqo_quiz');
 
@@ -2618,42 +1482,50 @@
             let kategoriStat = {};
             DB.kategoriUnik.forEach(k => kategoriStat[k] = { skor: 0, dijawab: 0, total: 0 });
 
+            let statsSpeed = { avgAll: 0, avgCorrect: 0, fastestAll: Infinity, fastestCorrect: Infinity, slowestAll: 0, slowestCorrect: 0 };
+            let timesAll = [];
+            let timesCorrect = [];
+
             quizSession.soalAktif.forEach((soal, i) => {
                 let userAns = quizSession.jawabanUser[i];
+                let timeSpent = quizSession.waktuPerSoal[i] || 0;
                 let pointsGained = 0;
                 let opsiUserTeks = "<i>Tidak dijawab</i>";
 
-                // Cari poin tertinggi pada opsi (Untuk referensi jawaban benar)
                 let bestOption = soal.pilihan.reduce((max, p) => p.poin > max.poin ? p : max, soal.pilihan[0]);
-
                 kategoriStat[soal.kategori].total += 1;
 
                 if (userAns) {
                     kategoriStat[soal.kategori].dijawab += 1;
+                    timesAll.push(timeSpent); 
+
                     let chosen = soal.pilihan.find(p => p.huruf === userAns);
                     if (chosen) {
                         pointsGained = chosen.poin;
                         opsiUserTeks = chosen.teks;
+                        
+                        if (pointsGained === 5) { timesCorrect.push(timeSpent); }
                     }
                 }
 
                 totalSkor += pointsGained;
                 kategoriStat[soal.kategori].skor += pointsGained;
 
-                // Fitur Dikembalikan: Logika Badge Benar/Salah
                 let badgeClass = "kosong"; let badgeText = "Kosong (0)";
                 if (userAns) {
                     if (pointsGained === 5) { badgeClass = "benar"; badgeText = `Tepat (+5)`; }
-                    else if (pointsGained > 0) { badgeClass = "warning"; badgeText = `Poin: +${pointsGained}`; } // Khusus TKP 1-4 poin
+                    else if (pointsGained > 0) { badgeClass = "warning"; badgeText = `Poin: +${pointsGained}`; } 
                     else { badgeClass = "salah"; badgeText = `Salah (0)`; }
                 }
 
-                // Menyusun Tampilan Review (Pembahasan Tiap Soal)
                 reviewHTML += `
                 <div class="review-item">
                     <div class="review-header">
                         <span>Soal No. ${i + 1} <span class="cat-badge" style="margin-left:5px;">${soal.kategori}</span></span>
-                        <span class="badge ${badgeClass}">${badgeText}</span>
+                        <div>
+                            <span style="font-size: 0.75rem; color: #666; margin-right: 10px;">⏱️ ${timeSpent.toFixed(1)} dtk</span>
+                            <span class="badge ${badgeClass}">${badgeText}</span>
+                        </div>
                     </div>
                     <div class="review-q">${soal.teksSoal}</div>
                     <div class="review-ans">
@@ -2669,7 +1541,20 @@
                 </div>`;
             });
 
-            // Menyusun Nilai Tampilan
+            if (timesAll.length > 0) {
+                statsSpeed.avgAll = timesAll.reduce((a,b)=>a+b,0) / timesAll.length;
+                statsSpeed.fastestAll = Math.min(...timesAll);
+                statsSpeed.slowestAll = Math.max(...timesAll);
+            } else { statsSpeed.fastestAll = 0; }
+
+            if (timesCorrect.length > 0) {
+                statsSpeed.avgCorrect = timesCorrect.reduce((a,b)=>a+b,0) / timesCorrect.length;
+                statsSpeed.fastestCorrect = Math.min(...timesCorrect);
+                statsSpeed.slowestCorrect = Math.max(...timesCorrect);
+            } else { statsSpeed.fastestCorrect = 0; }
+
+            for(let key in statsSpeed) { statsSpeed[key] = parseFloat(statsSpeed[key].toFixed(1)); }
+
             document.getElementById('eval-score').textContent = totalSkor;
             document.getElementById('eval-time').textContent = Math.floor(waktuTerpakai / 60) + "m " + (waktuTerpakai % 60) + "s";
 
@@ -2685,6 +1570,15 @@
                 }
             }
 
+            document.getElementById('eval-speed-grid').innerHTML = `
+                <div class="speed-card"><i>⏱️</i><div class="speed-label">Rata-Rata<br>(Semua Soal)</div><div class="speed-val">${statsSpeed.avgAll}s</div></div>
+                <div class="speed-card"><i>✔️</i><div class="speed-label">Rata-Rata<br>(Soal Benar)</div><div class="speed-val">${statsSpeed.avgCorrect}s</div></div>
+                <div class="speed-card"><i>⚡</i><div class="speed-label">Tercepat<br>(Semua Soal)</div><div class="speed-val">${statsSpeed.fastestAll}s</div></div>
+                <div class="speed-card"><i>🎯</i><div class="speed-label">Tercepat<br>(Soal Benar)</div><div class="speed-val">${statsSpeed.fastestCorrect}s</div></div>
+                <div class="speed-card"><i>🐢</i><div class="speed-label">Terlama<br>(Semua Soal)</div><div class="speed-val">${statsSpeed.slowestAll}s</div></div>
+                <div class="speed-card"><i>🤔</i><div class="speed-label">Terlama<br>(Soal Benar)</div><div class="speed-val">${statsSpeed.slowestCorrect}s</div></div>
+            `;
+
             for (let key in kategoriStat) { if (kategoriStat[key].total === 0) delete kategoriStat[key]; }
 
             document.getElementById('eval-kategori-grid').innerHTML = evalKatHTML;
@@ -2693,7 +1587,6 @@
             openScreen('screen-eval');
 
             try {
-                // PERBAIKAN: Penanganan headers CORS pada fetch POST submitScore
                 fetch(APP_SCRIPT_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'text/plain;charset=utf-8' },
@@ -2704,12 +1597,12 @@
                         waktuTerpakai: waktuTerpakai,
                         kategori: quizSession.kategoriDipilih,
                         detailKategori: kategoriStat,
-                        totalSoal: quizSession.soalAktif.length
+                        totalSoal: quizSession.soalAktif.length,
+                        statistikKecepatan: statsSpeed
                     })
                 });
             } catch (err) { console.error("Gagal menyimpan ke server"); }
         }
     </script>
 </body>
-
 </html>
